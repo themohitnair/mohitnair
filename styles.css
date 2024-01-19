@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Source+Code+Pro&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    background-image: url(static/bg-image.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.intro {
+    color: #ffffff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 10px;
+    letter-spacing: 3px;
+}
+
+.top {
+    align-items: center;
+    justify-content: center;
+    display: block;
+}
+
+.saber {
+    background-color: orange;
+    height: 5px;
+    margin: auto;
+    border-radius: 20px;
+    background-image: linear-gradient(green,yellow, white, yellow, green);
+    box-shadow: 0 0 9px 10px  orange;
+    filter: blur(3px);
+}
+
+.down{
+    margin-top: 10px;
+    width: 62%;
+}
+
+.up {
+    margin-top: 40px;
+    margin-bottom: 2px;
+    width: 42%;
+}
+
+.top-text {
+    text-align: center;
+    text-align: center;
+    color: white;
+    width: 60%;
+    font-family: 'Archivo Narrow', sans-serif;    
+    color: #FFE919;
+    font-size: 90px;
+    font-style: bold;
+    transform: perspective(500px) rotateX(45deg);
+    letter-spacing: 10px;
+    word-spacing: 12px;
+    margin: auto;
+}
