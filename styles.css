@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Source+Code+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&display=swap');
 
 body {
     margin: 0;
@@ -28,16 +29,13 @@ body {
 }
 
 .saber {
-    background-color: green;
-    height: 7px;
+    background-color: blueviolet;
+    height: 10px;
     margin: auto;
     border-radius: 20px;
-    background-image: linear-gradient(yellow, green, white, green, yellow);
     filter: blur(2px);
-    animation: flicker 10s infinite;
-    margin-top: 10px;
-    width: 62%;
-
+    animation: extendFromLeft 1s ease-in-out forwards, flicker 10s infinite;
+    background-image: linear-gradient(blue, white 50%, blue);
 }
 
 .top-text {
@@ -50,36 +48,39 @@ body {
     font-size: 100px;
     font-style: bold;
     transform: perspective(700px) rotateX(45deg);
-    letter-spacing: 10px;
-    word-spacing: 12px;
+    letter-spacing: 17px;
+    word-spacing: 5px;
     margin: auto;
 }
 
 @keyframes flicker {
     0% {
         opacity: 0.8;
-        filter: blur(2px);
-        box-shadow: 0 0 20px 10px green;
-    }
-    25% {
-        opacity: 1;
-        filter: blur(2px);
-        box-shadow: 0 0 25px 12px green;
+        filter: blur(1px);
+        box-shadow: 0 0 20px 15px blue;
+        
     }
     50% {
         opacity: 1;
-        filter: blur(2px);
-        box-shadow: 0 0 25px 15px green;
+        filter: blur(1px);
+        box-shadow: 0 0 25px 20px blue;
     }
-    75% {
-        opacity: 1;
-        filter: blur(2px);
-        box-shadow: 0 0 25px 12px green;
-    }
-
     100% {
         opacity: 0.8;
-        filter: blur(2px);
-        box-shadow: 0 0 20px 10px green;
+        filter: blur(1px);
+        box-shadow: 0 0 25px 20px blue;
     }
 }
+
+@keyframes extendFromLeft {
+    0% {
+        width: 0;
+        transform: translateX(0%);
+    }
+    100% {
+        width: 45%;
+        transform: translateX(0);
+    }
+}
+
+
