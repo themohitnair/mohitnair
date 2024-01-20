@@ -36,7 +36,7 @@ body {
     margin-top: 20px;
     border-radius: 20px;
     filter: blur(2px);
-    animation: extendFromLeft 1s ease-in-out forwards, flicker 10s infinite;
+    animation: extendFromLeft 1s ease-in-out forwards, flicker 5s infinite;
     background-image: linear-gradient(blue, white 50%, blue);
 }
 
@@ -116,18 +116,18 @@ nav a:hover {
     0% {
         opacity: 0.8;
         filter: blur(1px);
-        box-shadow: 0 0 20px 10px blue;
+        box-shadow: 0 0 30px 10px blue;
         
     }
     50% {
         opacity: 1;
         filter: blur(1px);
-        box-shadow: 0 0 20px 10px blue;
+        box-shadow: 0 0 20px 15px blue;
     }
     100% {
         opacity: 0.8;
         filter: blur(1px);
-        box-shadow: 0 0 20px 10px blue;
+        box-shadow: 0 0 25px 12px blue;
     }
 }
 
