@@ -40,6 +40,10 @@ body {
     background-image: linear-gradient(blue, white 50%, blue);
 }
 
+.down {
+    margin-top: 5px;
+}
+
 nav {
     padding: 10px;
     text-align: center;
@@ -64,6 +68,7 @@ nav li {
 }
   
 nav a {
+    text-align: center;
     color: #FFE919;
     text-decoration: none;
     font-size: 30px;
@@ -240,7 +245,7 @@ nav a:hover {
             transform: translateX(0%);
         }
         100% {
-            width: 90%;
+            width: 95%;
             transform: translateX(0);
         }
     }
