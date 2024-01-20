@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Source+Code+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&family=Work+Sans&display=swap');
+
+
+header {
+    position: sticky;
+}
 body {
     margin: 0;
     padding: 0;
@@ -13,10 +18,10 @@ body {
 }
 
 .intro {
-    color: #ffffff;
+    color: #55CEE1;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
-    font-size: 20px;
+    font-size: 27px;
     margin-top: 10px;
     letter-spacing: 3px;
 }
@@ -28,7 +33,7 @@ body {
 }
 
 .saber {
-    background-color: blueviolet;
+    background-color: blue;
     height: 10px;
     margin: auto;
     margin-top: 20px;
@@ -36,6 +41,73 @@ body {
     filter: blur(2px);
     animation: extendFromLeft 1s ease-in-out forwards, flicker 10s infinite;
     background-image: linear-gradient(blue, white 50%, blue);
+}
+
+nav {
+    padding: 10px;
+    text-align: center;
+    font-family: 'Archivo Narrow';
+    font-size: 15px;
+    margin-top: 10%;
+    width: 50%;
+    margin: auto;
+}
+  
+nav ul {
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    margin-top: 0.5%;
+    padding: 0;    
+}
+  
+nav li {
+    display: inline-block;
+    margin: 0 20px;
+}
+  
+nav a {
+    color: #FFE919;
+    text-decoration: none;
+    font-size: 30px;
+    padding: 10px 25px;
+    border-radius: 4px;
+    margin: 20px 19px;
+    background-color: transparent;
+}
+
+nav a:hover {
+    text-shadow: 0 0 2px #ffe919, 0 0 20px #ffe919;
+}
+
+.welcome {
+    text-align: justify;
+    width: 45%;
+    margin: auto;
+    font-size: 35px;
+    color: #ffe919;
+    font-family: 'Work Sans';
+    transform: perspective(800px) rotateX(40deg);
+}
+
+.greet {
+    text-align: center;
+}
+
+.name-text {
+    text-align: justify;
+    color: white;
+    font-family: 'Archivo Narrow', sans-serif;    
+    color: #FFE919;
+    font-size: 100px;
+    font-style: bold;
+    letter-spacing: 5px;
+    word-spacing: 5px;
+    margin: auto;
+}
+
+.name-text:hover {
+    text-shadow: 0 0 2px #ffe919, 0 0 20px #ffe919;
 }
 
 @keyframes flicker {
@@ -78,67 +150,4 @@ body {
     100% {
         box-shadow: 0 0 14px 4px rgba(0,0,255,0.7);
     }
-}
-
-nav {
-    padding: 10px;
-    text-align: center;
-    font-family: 'Archivo Narrow';
-    font-size: 15px;
-    margin-top: 10%;
-    width: 50%;
-    margin: auto;
-}
-  
-nav ul {
-    justify-content: space-between;
-    list-style: none;
-    margin: 0;
-    margin-top: 0.5%;
-    padding: 0;    
-}
-  
-nav li {
-    display: inline-block;
-    margin: 0 20px;
-}
-  
-nav a {
-    color: #FFE919;
-    text-decoration: none;
-    font-size: 25px;
-    padding: 10px 25px;
-    border-radius: 4px;
-    margin: 20px 7px;
-    background-color: transparent;
-}
-
-nav a:hover {
-    text-shadow: 0 0 2px #ffe919, 0 0 20px #ffe919;
-}
-
-.welcome {
-    text-align: justify;
-    width: 45%;
-    margin: auto;
-    font-size: 35px;
-    color: #ffe919;
-    font-family: 'Work Sans';
-    transform: perspective(500px) rotateX(35deg);
-}
-
-.greet {
-    text-align: center;
-}
-
-.name-text {
-    text-align: justify;
-    color: white;
-    font-family: 'Archivo Narrow', sans-serif;    
-    color: #FFE919;
-    font-size: 100px;
-    font-style: bold;
-    letter-spacing: 5px;
-    word-spacing: 5px;
-    margin: auto;
 }
