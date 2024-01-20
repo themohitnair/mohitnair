@@ -245,7 +245,7 @@ nav a:hover {
             transform: translateX(0%);
         }
         100% {
-            width: 95%;
+            width: 92%;
             transform: translateX(0);
         }
     }
