@@ -42,18 +42,18 @@ body {
     0% {
         opacity: 0.8;
         filter: blur(1px);
-        box-shadow: 0 0 20px 15px blue;
+        box-shadow: 0 0 20px 10px blue;
         
     }
     50% {
         opacity: 1;
         filter: blur(1px);
-        box-shadow: 0 0 25px 20px blue;
+        box-shadow: 0 0 20px 10px blue;
     }
     100% {
         opacity: 0.8;
         filter: blur(1px);
-        box-shadow: 0 0 25px 20px blue;
+        box-shadow: 0 0 20px 10px blue;
     }
 }
 
