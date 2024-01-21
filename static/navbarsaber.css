@@ -1,15 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Source+Code+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&family=Work+Sans&display=swap');
 
-
 body {
     margin: 0;
     padding: 0;
     background-color: black;
-    background-image: url(static/bg-image.png);
+    background-image: url(bg-image.png);
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     height: 100vh;
     overflow-x: hidden;
 }
@@ -23,34 +22,13 @@ body {
     letter-spacing: 3px;
 }
 
-.top {
-    align-items: center;
-    justify-content: center;
-    display: block;
-}
-
-.saber {
-    background-color: blue;
-    height: 10px;
-    margin: auto;
-    margin-top: 20px;
-    border-radius: 20px;
-    filter: blur(2px);
-    animation: extendFromLeft 1s ease-in-out forwards, flicker 5s infinite;
-    background-image: linear-gradient(blue, white 50%, blue);
-}
-
-.down {
-    margin-top: 5px;
-}
-
 nav {
     padding: 10px;
     text-align: center;
     font-family: 'Archivo Narrow';
     font-size: 15px;
     margin-top: 10%;
-    width: 50%;
+    width: 60%;
     margin: auto;
 }
   
@@ -73,8 +51,7 @@ nav a {
     text-decoration: none;
     font-size: 30px;
     padding: 10px 25px;
-    border-radius: 4px;
-    margin: 20px 19px;
+    margin: 20px 10px;
     background-color: transparent;
 }
 
@@ -82,34 +59,19 @@ nav a:hover {
     text-shadow: 0 0 2px #ffe919, 0 0 20px #ffe919;
 }
 
-.welcome {
-    text-align: justify;
-    width: 45%;
+.saber {
+    background-color: blue;
+    height: 10px;
     margin: auto;
-    font-size: 35px;
-    color: #ffe919;
-    font-family: 'Work Sans';
-    transform: perspective(800px) rotateX(40deg);
+    margin-top: 20px;
+    border-radius: 20px;
+    filter: blur(2px);
+    animation: extendFromLeft 1s ease-in-out forwards, flicker 5s infinite;
+    background-image: linear-gradient(blue, white 50%, blue);
 }
 
-.greet {
-    text-align: center;
-}
-
-.name-text {
-    text-align: justify;
-    color: white;
-    font-family: 'Archivo Narrow', sans-serif;    
-    color: #FFE919;
-    font-size: 100px;
-    font-style: bold;
-    letter-spacing: 5px;
-    word-spacing: 5px;
-    margin: auto;
-}
-
-.name-text:hover {
-    text-shadow: 0 0 2px #ffe919, 0 0 20px #ffe919;
+.down {
+    margin-top: 5px;
 }
 
 @keyframes flicker {
@@ -142,18 +104,6 @@ nav a:hover {
     }
 }
 
-@keyframes flare {
-    0% {
-        box-shadow: 0 0 14px 4px rgba(0,0,255,0.5);
-    }
-    50% {
-        border: 0px;
-    }
-    100% {
-        box-shadow: 0 0 14px 4px rgba(0,0,255,0.7);
-    }
-}
-
 @media (max-width: 1700px) {
     nav li {
         display: block;
@@ -164,19 +114,6 @@ nav a:hover {
         padding: 10px 25px;
         margin: 20px 19px;
     }    
-
-    .welcome {
-        width: 60%;
-        font-size: 25px;
-    }
-    
-    .greet {
-        font-size: 100px;
-    }
-    
-    .name-text {
-        font-size: 100px;
-    }
 
     .intro {
         font-size: 25px;
@@ -194,22 +131,7 @@ nav a:hover {
     }    
 }
 
-@media (max-width: 1100px) {
-    .welcome {
-        width: 70%;
-        font-size: 25px;
-    }
-    
-    .greet {
-        font-size: 75px;
-        letter-spacing: 10px;
-    }
-    
-    .name-text {
-        font-size: 80px;
-        letter-spacing: 7px;
-    }
-      
+@media (max-width: 1115px) {      
     nav li {
         display: block;
     }
@@ -248,20 +170,5 @@ nav a:hover {
             width: 92%;
             transform: translateX(0);
         }
-    }
-    
-    .greet {
-        font-size: 60px;
-        letter-spacing: 0px;
-    }
-
-    .name-text {
-        font-size: 55px;
-        letter-spacing: 7px;
-    }
-
-    .welcome {
-        width: 80%;
-        font-size: 20px;
     }
 }
