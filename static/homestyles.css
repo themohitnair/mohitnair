@@ -38,26 +38,7 @@
     text-shadow: 0 0 2px #ffe919, 0 0 20px #ffe919;
 }
 
-.gitcon {
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    text-align: left;
-    width: 95%;
-    margin: auto;
-}
-  
-.stats, .langs {
-    margin: auto;
-}
 
-.stat, .lang {
-    width: 100%;
-}
-
-.stat:hover, .lang:hover {
-    box-shadow: 0 0 20px 7px #ffe919, 0 0 20px 7px #ffe919;
-}
 
 @media (max-width: 1700px) {
     .welcome {
