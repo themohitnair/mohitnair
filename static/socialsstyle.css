@@ -64,8 +64,9 @@ nav a:hover {
 }
 
 .links {
-    width: 30%;
+    width: 35%;
     margin: auto;
+    margin-top: 2%;
 }
 
 .social {
@@ -77,13 +78,22 @@ nav a:hover {
 .uname {
     padding: 2%;
     font-size: 28px;
-    margin-left: 2%;
+    margin-left: 5%;
 }
 
 .social {
     margin-top: 1%;
 }
 
+.social .uname a {
+    text-decoration: none;
+    color: white;
+    font-family: monospace;
+}
+
+.social .uname a:hover {
+    font-weight: 600;
+}
 
 .icon {
     padding: 1.5%;
