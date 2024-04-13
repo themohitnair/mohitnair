@@ -1,0 +1,91 @@
+* {
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    font-family: 'Ubuntu', 'Noto Sans';
+    color: white;
+    overflow-x: hidden;
+}
+
+header {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+}
+
+nav {
+    display: flex;
+    margin: 0% 1%;
+    height: 50%;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #212121;
+    width: 40%;
+    border-radius: 50px;
+}
+
+nav, .logo, .gh {
+    padding: 1%;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    font-weight: lighter;
+}
+
+nav a:hover {
+    font-weight: bolder;
+}
+
+.logo, .gh {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #171717;
+    border-radius: 50px;
+}
+
+.m {
+    width: 50px;
+}
+
+.myfaceimg {
+    width: 400px;
+    border-radius: 5px;
+}
+
+.welcome {
+    width: 50%;
+    background-color: #171717;
+    padding: 2%;
+    margin: auto;
+    border-radius: 6px;
+    display: flex;
+    padding: 2%;
+    margin-top: 1%;    
+}
+
+.hometext {
+    margin-left: 4%;
+}
+
+.subtext {
+    font-size: 25px;
+    margin-top: 5px;
+}
+
+.intro {
+    font-size: 60px;
+}
+
+
