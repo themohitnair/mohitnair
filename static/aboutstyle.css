@@ -32,7 +32,7 @@ nav {
     border-radius: 50px;
 }
 
-nav, .logo, .gh {
+nav, .logo {
     padding: 1%;
 }
 
@@ -57,54 +57,4 @@ nav a:hover {
 
 .m {
     width: 50px;
-}
-
-.icon a img {
-    height: 50px;
-}
-
-.links {
-    width: 35%;
-    margin: auto;
-    margin-top: 2%;
-}
-
-.social {
-    display: flex;
-    align-items: center;
-    justify-content: first baseline;
-}
-
-.uname {
-    padding: 2%;
-    font-size: 28px;
-    margin-left: 5%;
-}
-
-.social {
-    margin-top: 1%;
-}
-
-.social .uname a {
-    text-decoration: none;
-    color: white;
-    font-family: 'Reddit Mono', 'Space Mono', monospace;
-}
-
-.icon:hover {
-    padding: 2%;
-    
-}
-
-.social .uname a:hover {
-    font-weight: 600;
-}
-
-.icon {
-    padding: 1.5%;
-}
-
-.icon, .uname {
-    background-color: #171717;
-    border-radius: 70px;
 }
