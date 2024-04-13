@@ -32,7 +32,7 @@ nav {
     border-radius: 50px;
 }
 
-nav, .logo {
+nav, .logo, .gh {
     padding: 1%;
 }
 
@@ -59,43 +59,37 @@ nav a:hover {
     width: 50px;
 }
 
-.myfaceimg {
-    width: 400px;
-    border-radius: 5px;
+.icon a img {
+    height: 50px;
 }
 
-.welcome {
-    width: 50%;
-    background-color: #171717;
-    padding: 2%;
+.links {
+    width: 30%;
     margin: auto;
-    border-radius: 6px;
+}
+
+.social {
     display: flex;
+    align-items: center;
+    justify-content: first baseline;
+}
+
+.uname {
     padding: 2%;
-    margin-top: 1%;    
+    font-size: 28px;
+    margin-left: 2%;
 }
 
-.hometext {
-    margin-left: 4%;
-}
-
-.subtext {
-    font-size: 25px;
-    margin-top: 5px;
-    font-weight: lighter;
-}
-
-.subtext a {
-    text-decoration: none;
-    color: white;
-}
-
-.subtext a:hover {
-    font-weight: bold;
-}
-
-.intro {
-    font-size: 60px;
+.social {
+    margin-top: 1%;
 }
 
 
+.icon {
+    padding: 1.5%;
+}
+
+.icon, .uname {
+    background-color: #171717;
+    border-radius: 70px;
+}
