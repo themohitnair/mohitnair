@@ -72,7 +72,11 @@ nav a:hover {
     height: auto;
 }
 
-.welcome {
+.deskimg {
+    width: 100%;
+}
+
+.welcome, .deskdisp {
     width: 55%;
     background-color: #171717;
     padding: 2%;
