@@ -67,6 +67,11 @@ nav a:hover {
     border: 3px solid white;
 }
 
+.archimg {
+    width: 1000px;
+    height: auto;
+}
+
 .welcome {
     width: 55%;
     background-color: #171717;
