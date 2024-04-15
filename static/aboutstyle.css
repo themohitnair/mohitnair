@@ -4,6 +4,7 @@
     padding: 2%;
     flex-direction: row;
     width: 55%;
+    overflow: hidden;
     margin: auto;
     border-radius: 6px;
     margin-top: 2%;
@@ -11,10 +12,9 @@
 
 .aboutmohit {
     float: left;
-    margin-right: 2%;
-    margin-bottom: 2%;
+    margin-right: 3%;
     height: auto;
-    width: 50%;
+    width: 45%;
     border-radius: 6px;
     padding: 7px;
     border: 3px solid white;
