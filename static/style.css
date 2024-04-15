@@ -17,7 +17,7 @@
     white-space: nowrap;
     border-right: 3px solid white;
     overflow: hidden;
-    animation: typing 3s steps(18) alternate infinite;
+    animation: typing 3.5s steps(40), blink-caret .75s step-end infinite;
 }
 
 .deskimg {
@@ -64,7 +64,9 @@
 }
 
 .intro {
+    max-width: 520px;
     font-size: 60px;
+    display: inline-block;
 }
 
 @keyframes typing {
@@ -72,6 +74,15 @@
         width: 0%;
     }
     100% {
-        width: 527px;
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from, to { 
+        border-color: transparent 
+    }
+    50% {
+        border-color: white; 
     }
 }
