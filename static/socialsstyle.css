@@ -8,11 +8,11 @@
 }
 
 .icon {
-    width: 40px;
+    width: 50px;
 }
 
 .icon:hover {
-    width: 45px;
+    width: 55px;
 }
 
 .social {
@@ -23,7 +23,7 @@
 .uname {
     padding: 1% 5%;
     background-color: #171717;
-    font-size: 22px;
+    font-size: 27px;
     margin-left: 6%;
     border-radius: 6px;
 }
