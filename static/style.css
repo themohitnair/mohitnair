@@ -13,7 +13,7 @@
     height: auto;
 }
 
-.arch .hometext .intro {
+.welcome .hometext .intro {
     white-space: nowrap;
     border-right: 3px solid white;
     overflow: hidden;
