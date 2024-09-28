@@ -1,2 +1,2 @@
 # skywalker
-Mohit Nair's Portfolio Website (React)
+Mohit Nair's portfolio website (in React cuz why not?)
