@@ -3,7 +3,8 @@ import { pluginReact } from '@rsbuild/plugin-react';
 
 export default defineConfig({
   html: {
-    title: "Mohit Nair"
+    title: "Mohit Nair",
+    favicon: "public/favicon/skywalker.svg"
   },
   plugins: [pluginReact()],
 });
