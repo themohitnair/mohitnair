@@ -21,6 +21,7 @@ const TechItem: React.FC<TechItemProps> = ({ name, Icon }) => (
 
 const TechStack: React.FC = () => {
   const technologies: TechItemProps[] = [
+    { name: 'Java', Icon: FaJava },
     { name: 'C', Icon: SiC },
     { name: 'Go', Icon: SiGo },
     { name: 'Python', Icon: FaPython },
@@ -29,7 +30,6 @@ const TechStack: React.FC = () => {
     { name: 'Node.js', Icon: FaNodeJs },
     { name: 'Docker', Icon: FaDocker },
     { name: 'Git', Icon: FaGitAlt },
-    { name: 'Java', Icon: FaJava },
     { name: 'MongoDB', Icon: SiMongodb },
     { name: 'SQLite', Icon: SiSqlite },
     { name: 'MySQL', Icon: SiMysql },
