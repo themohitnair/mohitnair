@@ -3,8 +3,7 @@ import {
   FaJava, FaPython, FaJs, FaReact, FaNodeJs, FaDocker, FaGitAlt, FaHtml5, FaCss3Alt
 } from 'react-icons/fa';
 import { 
-  SiC, SiGo, SiMongodb, SiSqlite, SiMysql, SiWebdriverio, SiSelenium,
-  SiFastapi, SiPython
+  SiC, SiGo, SiMongodb, SiSqlite, SiMysql, SiWebdriverio, SiSelenium, SiFastapi, SiArchlinux, SiGnubash, SiGnome, SiGithub, SiVisualstudiocode, SiTypescript, SiCplusplus, SiGin
 } from 'react-icons/si';
 
 interface TechItemProps {
@@ -23,21 +22,30 @@ const TechStack: React.FC = () => {
   const technologies: TechItemProps[] = [
     { name: 'Java', Icon: FaJava },
     { name: 'C', Icon: SiC },
+    { name: 'C++', Icon: SiCplusplus },
     { name: 'Go', Icon: SiGo },
     { name: 'Python', Icon: FaPython },
+    { name: 'FastAPI', Icon: SiFastapi },
+    { name: 'Gin', Icon: SiGin },
     { name: 'JavaScript', Icon: FaJs },
+    { name: 'TypeScript', Icon: SiTypescript },
     { name: 'React', Icon: FaReact },
     { name: 'Node.js', Icon: FaNodeJs },
+    { name: 'HTML', Icon: FaHtml5 },
+    { name: 'CSS', Icon: FaCss3Alt },
     { name: 'Docker', Icon: FaDocker },
     { name: 'Git', Icon: FaGitAlt },
+    { name: 'GitHub', Icon: SiGithub },
     { name: 'MongoDB', Icon: SiMongodb },
     { name: 'SQLite', Icon: SiSqlite },
     { name: 'MySQL', Icon: SiMysql },
-    { name: 'HTML', Icon: FaHtml5 },
-    { name: 'CSS', Icon: FaCss3Alt },
+    { name: 'Bash', Icon: SiGnubash },
+    { name: 'Arch Linux', Icon: SiArchlinux },
+    { name: 'GNOME', Icon: SiGnome },
+    { name: 'VS Code', Icon: SiVisualstudiocode },
     { name: 'WebdriverIO', Icon: SiWebdriverio },
     { name: 'Selenium', Icon: SiSelenium },
-    { name: 'FastAPI', Icon: SiFastapi },
+    
   ];
 
   return (
