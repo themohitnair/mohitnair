@@ -52,6 +52,12 @@ const Projects: React.FC = () => {
       repo: 'https://github.com/themohitnair/skyblog',
       description: 'A simple, easy-to-configure blogging framework written in Go for self-hosted blogs.',
     },
+    {
+      name: 'distrowiz',
+      languages: ['TypeScript/JavaScript', 'ReactJS'],
+      repo: 'https://github.com/themohitnair/distrowiz',
+      description: 'A ReactJS Application that uses a simple scoring algorithm to help new Linux users to choose a suitable Linux distribution.'
+    }
   ];
 
   return (
