@@ -11,7 +11,7 @@ interface NavbarProps {
 
 const Navlink: React.FC<NavlinkProps> = ({ text, link }) => {
     return (
-        <Link href={link} className="hover:text-white">
+        <Link href={link} className="hover:text-gray-500">
             {text}
         </Link>
     )
@@ -19,11 +19,14 @@ const Navlink: React.FC<NavlinkProps> = ({ text, link }) => {
 
 const Navbar: React.FC<NavbarProps> = ({ links }) => {
     return (
-        <header className="top-0 sticky flex justify-between items-center px-5 py-5">
-            <div className="text-2xl">
-                Mohit Nair
+        <header className="top-0 sticky flex justify-between items-center px-10 py-5">
+            <div className="text-2xl hover:text-blue-600">
+                <Link href="/">
+                    Mohit Nair
+                </Link>
+                    
             </div>
-            <div>
+            <div className="flex gap-x-10">
                 {links.map((item, key) => (
                     <Navlink text={item.text} link={item.link} key={key} />
                 ))}
