@@ -3,7 +3,7 @@ const Info = () => {
         <div className="m-auto text-2xl mt-10">
             <p className="text-3xl font-bold mb-4">Hi.</p>
             <p className="text-3xl font-bold mb-4">
-                I'm
+                I&apos;m
                 <p className="text-5xl font-bold text-blue-600">
                     Mohit
                 </p>
