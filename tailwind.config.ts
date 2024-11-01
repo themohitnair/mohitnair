@@ -8,6 +8,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: "#000000"
+      },
+      fontFamily: {
+        gst: "Geist",
+        rbt: "Roboto",
+        fra: "Fira"
+      }
     },
   },
   plugins: [],

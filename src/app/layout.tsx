@@ -3,17 +3,15 @@ import "./globals.css";
 
 export const metadata: Metadata = {
     title: "Mohit Nair",
-    description: "Mohit Nair's portfolio site",
+    description: "Mohit Nair's Portfolio Website",
 };
 
-export default function RootLayout({
-    children,
-}: Readonly<{
-    children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{children: React.ReactNode;}>) {
     return (
         <html lang="en">
-            <body>{children}</body>
+            <body className="font-fra text-white">
+                {children}
+            </body>
         </html>
     );
 }
