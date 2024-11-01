@@ -1,6 +1,5 @@
 import Hero, { HeroProps } from "./hero";
 import Info, { InfoProps } from "./info";
-import { SecondaryProps } from "./secondary";
 
 export default function Home() {
     
@@ -20,10 +19,6 @@ export default function Home() {
         alt: "Mohit in another amazing backdrop",
         width: 480,
         height: 292.45
-    }
-
-    const secText: SecondaryProps = {
-        text: "Welcome to my website. Here I share my projects, ideas and stuff I know."
     }
 
     return (
