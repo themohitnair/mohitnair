@@ -1,6 +1,5 @@
 import Hero, { HeroProps } from "./hero";
 import Info from "./info";
-import { NavlinkProps } from "./navbar";
 
 export default function Home() {
     
