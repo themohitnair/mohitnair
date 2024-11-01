@@ -18,6 +18,9 @@ const links: NavlinkProps[] = [
 export default function RootLayout({ children }: Readonly<{children: React.ReactNode;}>) {
     return (
         <html lang="en">
+            <head>
+                <link rel="icon" href="/favicon/mohitnair.svg" type="image/svg+xml" />
+            </head>
             <body className="font-fra text-white">
                 <Navbar links={links}/>
                 {children}
