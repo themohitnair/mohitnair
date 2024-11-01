@@ -19,7 +19,7 @@ const Navlink: React.FC<NavlinkProps> = ({ text, link }) => {
 
 const Navbar: React.FC<NavbarProps> = ({ links }) => {
     return (
-        <header className="top-0 sticky flex justify-between items-center px-10 py-5">
+        <header className="top-0 sticky flex justify-between items-center px-10 py-5 bg-black bg-opacity-75">
             <div className="text-2xl hover:text-blue-600">
                 <Link href="/">
                     Mohit Nair

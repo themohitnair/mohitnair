@@ -1,6 +1,6 @@
 const Info = () => {
     return (
-        <div className="m-auto w-3/5 text-2xl mt-10">
+        <div className="m-auto text-2xl mt-10">
             <p className="text-3xl font-bold mb-4">Hi.</p>
             <p className="text-3xl font-bold mb-4">
                 I'm
@@ -8,7 +8,7 @@ const Info = () => {
                     Mohit
                 </p>
             </p>
-            <p className="mt-4 text-xl text-gray-500">
+            <p className="mt-10 text-xl text-gray-500 text-center">
                 Welcome to my website. Here I share my projects, ideas and stuff I know.
             </p>
         </div>
