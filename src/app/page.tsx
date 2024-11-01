@@ -1,5 +1,6 @@
 import Hero, { HeroProps } from "./hero";
-import Info from "./info";
+import Info, { InfoProps } from "./info";
+import { SecondaryProps } from "./secondary";
 
 export default function Home() {
     
@@ -13,9 +14,21 @@ export default function Home() {
             height: 371
         }
     ]
+
+    const info: InfoProps = {
+        imagePath: "/images/lake.jpeg",
+        alt: "Mohit in another amazing backdrop",
+        width: 480,
+        height: 292.45
+    }
+
+    const secText: SecondaryProps = {
+        text: "Welcome to my website. Here I share my projects, ideas and stuff I know."
+    }
+
     return (
         <div className="w-3/4 m-auto">            
-            <Info/>
+            <Info imagePath={info.imagePath} alt={info.alt} width={info.width} height={info.height}/>
 
             {heroes.map((item, key) => (
                 <Hero imagePath={item.imagePath} text={item.text} alt={item.alt} width={item.width} height={item.height} key={key}/>
