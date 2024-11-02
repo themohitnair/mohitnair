@@ -1,9 +1,9 @@
 import { LucideIcon } from "lucide-react";
 
 export interface StuffProps {
-    icon: LucideIcon;
-    heading: string;
-    points: string[];
+    icon: LucideIcon
+    heading: string
+    points: string[]
 }
 
 const Stuff: React.FC<StuffProps> = ({ icon: Icon, heading, points }) => {

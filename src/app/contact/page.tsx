@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Contacts from "./contacts";
 
 export const metadata: Metadata = {
     title: "Contact - Mohit Nair",
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
     return (
         <div className="w-3/4 m-auto pb-10">
+            <Contacts/>
         </div>
     );
 }
