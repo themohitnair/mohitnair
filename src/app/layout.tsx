@@ -17,7 +17,7 @@ const links: NavlinkProps[] = [
 
 export default function RootLayout({ children }: Readonly<{children: React.ReactNode;}>) {
     return (
-        <html lang="en">
+        <html lang="en" className="select-none">
             <head>
                 <link rel="icon" href="/favicon/mohitnair.svg" type="image/svg+xml" />
             </head>

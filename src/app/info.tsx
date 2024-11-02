@@ -28,7 +28,7 @@ const Info: React.FC<InfoProps> = ({ imagePath, alt }) => {
                     </div>
                     <div className="w-full md:w-1/2">
                         <div className="relative w-full aspect-square max-w-md mx-auto">
-                            <Image src={imagePath} alt={alt} layout="fill" objectFit="cover" className="rounded-2xl shadow-xl transition-transform hover:scale-105" priority/>
+                            <Image src={imagePath} alt={alt} fill={true} objectFit="cover" className="rounded-2xl shadow-xl transition-transform hover:scale-105" priority/>
                         </div>
                     </div>
                 </div>

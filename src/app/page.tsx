@@ -9,7 +9,7 @@ export default function Home() {
     }
 
     return (
-        <div className="mx-auto pb-10 w-full px-4 sm:w-3/4 lg:w-2/3">
+        <div className="mx-auto pb-10 w-full px-4 sm:w-3/4 lg:w-4/5">
             <Info imagePath={info.imagePath} alt={info.alt} />
 
             <QuoteSection />
