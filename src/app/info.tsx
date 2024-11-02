@@ -3,11 +3,9 @@ import Image from "next/image"
 export interface InfoProps {
     imagePath: string
     alt: string
-    width: number
-    height: number
 }
 
-export default function Info({ imagePath, alt, width, height }: InfoProps) {
+export default function Info({ imagePath, alt }: InfoProps) {
     return (
         <div className="bg-black text-white">
             <div className="container mx-auto px-4 py-16 sm:py-24">

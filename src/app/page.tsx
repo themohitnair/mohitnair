@@ -23,13 +23,11 @@ export default function Home() {
     const info: InfoProps = {
         imagePath: "/images/lake.jpeg",
         alt: "Mohit in another amazing backdrop",
-        width: 480,
-        height: 292.45
     }
 
     return (
         <div className="w-3/4 m-auto">            
-            <Info imagePath={info.imagePath} alt={info.alt} width={info.width} height={info.height}/>
+            <Info imagePath={info.imagePath} alt={info.alt}/>
 
             <QuoteSection/>
 
