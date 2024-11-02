@@ -1,9 +1,10 @@
 import { LucideIcon } from "lucide-react"
 import Link from "next/link"
+import { IconType } from "react-icons"
 
 export interface ContactProps {
     platform: string
-    icon: LucideIcon
+    icon: IconType
     link: string
 }
 

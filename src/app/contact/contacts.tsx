@@ -1,22 +1,24 @@
 import { GithubIcon, Linkedin, Zap } from "lucide-react"
 import Contact, { ContactProps } from "./contact"
+import { FaGithub, FaLinkedin } from "react-icons/fa6"
+import { SiChessdotcom } from "react-icons/si"
 
 const Contacts = () => {
     const socials: ContactProps[] = [
         {
             platform: "Github",
             link: "https://github.com/themohitnair",
-            icon: GithubIcon
+            icon: FaGithub
         },
         {
             platform: "LinkedIn",
             link: "https://linkedin.com/in/themohitnair",
-            icon: Linkedin
+            icon: FaLinkedin
         },
         {
             platform: "chess.com",
             link: "https://www.chess.com/member/skywalkeraboard",
-            icon: Zap
+            icon: SiChessdotcom
         }
     ]
     return (
