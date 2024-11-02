@@ -5,7 +5,7 @@ import QuoteSection from "./quote";
 import Stack, { SkillProp } from "./stack";
 import { FaPython, FaReact } from "react-icons/fa6";
 import { RiNextjsLine } from "react-icons/ri";
-import { DiJava, DiLinux, DiMongodb, DiNodejs } from "react-icons/di";
+import { DiLinux, DiMongodb, DiNodejs } from "react-icons/di";
 
 export default function Home() {
     const info: InfoProps = {
@@ -65,10 +65,6 @@ export default function Home() {
         {
             icon: DiMongodb,
             name: "MongoDB",
-        },
-        {
-            icon: DiJava,
-            name: "Java",
         },
         {
             icon: SiPandas,
