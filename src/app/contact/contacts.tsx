@@ -1,4 +1,3 @@
-import { GithubIcon, Linkedin, Zap } from "lucide-react"
 import Contact, { ContactProps } from "./contact"
 import { FaGithub, FaLinkedin } from "react-icons/fa6"
 import { SiChessdotcom } from "react-icons/si"
