@@ -20,7 +20,7 @@ const Hero: React.FC<HeroProps> = ({ imagePath, points = [], alt, width, height 
                 {points && points.length > 0 && (
                     <div className="space-y-6">
                         {points.map((point, index) => (
-                            <div key={index} className="flex items-start space-x-4 bg-black rounded-lg p-4 shadow-md transition-all duration-300">
+                            <div key={index} className="flex items-start space-x-4 bg-gradient-to-r from-blue-900 via-purple-500 to-indigo-500 rounded-lg p-4 shadow-md transition-transform hover:scale-105">
                                 <div>
                                     <p className="text-xl text-white">{point}</p>
                                 </div>

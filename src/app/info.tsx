@@ -21,7 +21,7 @@ export default function Info({ imagePath, alt }: InfoProps) {
                             Welcome to my website. Here I share my projects, ideas and stuff I know.
                         </p>
                         <div className="pt-4">
-                            <a href="/contact" className="inline-block bg-white text-black font-semibold py-3 px-6 rounded-md transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+                            <a href="/contact" className="inline-block bg-gradient-to-r from-blue-900 via-purple-500 to-indigo-500 text-white font-semibold py-3 px-6 rounded-md transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
                                 Get in touch
                             </a>
                         </div>

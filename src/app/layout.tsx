@@ -5,7 +5,7 @@ import Navbar, { NavlinkProps } from "./navbar";
 export const metadata: Metadata = {
     title: "Mohit Nair",
     description: "Mohit Nair's Portfolio Website",
-};
+}
 
 const links: NavlinkProps[] = [
     { text: "Resume", link: "/resume" },

@@ -3,13 +3,11 @@ import Info, { InfoProps } from "./info";
 import QuoteSection from "./quote";
 
 export default function Home() {
-    
-
     const heroes: HeroProps[] = [
         { 
             imagePath: "/images/osm.jpg", 
             points: [
-                "Currently pursuing my Bachelor's of Engineering in Information Science and Engineering at Ramaiah Institute of Technology, Bangalore",
+                "I'm currently pursuing my Bachelor's of Engineering in Information Science and Engineering at Ramaiah Institute of Technology, Bangalore",
                 "I take a keen interest in Full Stack Web Development, with an emphasis on Backend Development",
                 "I love chess.",
                 "Also interested in Natural Language Processing, and Neural Nets"
@@ -26,7 +24,7 @@ export default function Home() {
     }
 
     return (
-        <div className="w-3/4 m-auto">            
+        <div className="w-3/4 m-auto pb-10">            
             <Info imagePath={info.imagePath} alt={info.alt}/>
 
             <QuoteSection/>

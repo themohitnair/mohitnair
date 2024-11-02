@@ -25,7 +25,7 @@ const Navbar: React.FC<NavbarProps> = ({ links }) => {
     const [ isMenuOpen, setMenuOpen ] = useState(false)
     return (
         <header className="top-0 sticky flex justify-between items-center px-7 py-5 bg-black bg-opacity-75 z-50">
-            <div className="text-2xl hover:text-blue-600 transition-colors duration-200">
+            <div className="text-2xl hover:text-blue-400 transition-colors duration-200">
                 <Link href="/">
                     Mohit Nair
                 </Link>
