@@ -24,8 +24,8 @@ const Navlink: React.FC<NavlinkProps> = ({ text, link }) => {
 const Navbar: React.FC<NavbarProps> = ({ links }) => {
     const [ isMenuOpen, setMenuOpen ] = useState(false)
     return (
-        <header className="top-0 sticky flex justify-between items-center px-7 py-5 bg-black bg-opacity-75 z-50">
-            <div className="text-2xl hover:text-blue-400 transition-colors duration-200">
+        <header className="top-0 sticky flex justify-between items-center px-7 py-5 bg-black bg-opacity-80 z-50">
+            <div className="text-2xl hover:text-blue-500 transition-colors duration-200">
                 <Link href="/">
                     Mohit Nair
                 </Link>
@@ -44,7 +44,7 @@ const Navbar: React.FC<NavbarProps> = ({ links }) => {
                 { isMenuOpen ? <X width={24} /> : <Menu height={24} /> }
             </button>
             {isMenuOpen && (
-                <div className="flex flex-col md:hidden items-end absolute top-full left-0 right-0 bg-black bg-opacity-75 py-3 px-7 space-y-3 z-50">
+                <div className="flex flex-col md:hidden items-end absolute top-full left-0 right-0 bg-black bg-opacity-75 py-3 px-7 space-y-3 z-50 text-2xl">
                     {links.map((item, key) => (
                         <Navlink text={item.text} link={item.link} key={key} />
                     ))}

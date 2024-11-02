@@ -1,36 +1,58 @@
-import Image from "next/image"
+import Stuff, { StuffProps } from "./stuff";
+import { GraduationCap, Heart, ActivitySquare, Cpu } from "lucide-react";
 
-export interface HeroProps {
-    imagePath: string
-    points: string[]
-    alt: string
-    height: number
-    width: number
-}
-
-const Hero: React.FC<HeroProps> = ({ imagePath, points = [], alt, width, height }) => {
+const Hero: React.FC = () => {
+    const stuff: StuffProps[] = [
+        {
+            icon: GraduationCap,
+            heading: "Education",
+            points: [
+                "Federal Public School, Tirumenahalli (Middle and Lower Secondary Education) - 2020",
+                "Presidency PU College, Kogilu (Pre-University Education - Physics, Chemistry, Math and Computer Science Stream) - 2022",
+                "Ramaiah Institute of Technology (Undergraduate Education - B. E. Information Science and Engineering) - Graduating 2026"
+            ]
+        },
+        {
+            icon: Heart,
+            heading: "Interests",
+            points: [
+                "Full Stack Web Development",
+                "Neural Networks",
+                "Computer Vision",
+                "Natural Language Processing",
+            ]
+        },
+        {
+            icon: Cpu,
+            heading: "Tech Stack",
+            points: [
+                "FastAPI",
+                "React",
+                "HonoJS",
+                "NextJS",
+                "NodeJS",
+                "Pandas, Matplotlib, and Numpy",
+            ]
+        },
+        {
+            icon: ActivitySquare,
+            heading: "Hobbies",
+            points: [
+                "Chess",
+                "Food",
+                "History",
+                "Debates",
+                "Movies",
+            ]
+        }        
+    ]
     return (
-        <div className="flex flex-col md:flex-row items-start justify-normal m-auto mt-10 gap-10">
-            <div className="w-full md:w-1/2">
-                {imagePath && (
-                    <Image src={imagePath} alt={alt} width={width} height={height} className="rounded-md w-full h-auto transition-transform hover:scale-105"/>
-                )}
-            </div>
-            <div className="w-full md:w-1/2">
-                {points && points.length > 0 && (
-                    <div className="space-y-6">
-                        {points.map((point, index) => (
-                            <div key={index} className="flex items-start space-x-4 bg-gradient-to-r from-blue-900 via-purple-500 to-indigo-500 rounded-lg p-4 shadow-md transition-transform hover:scale-105">
-                                <div>
-                                    <p className="text-xl text-white">{point}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                )}
-            </div>
+        <div className="grid grid-cols-2 gap-x-4 mx-auto mt-10 px-4">
+            {stuff.map((item, key) => (
+                <Stuff key={key} icon={item.icon} heading={item.heading} points={item.points}/>
+            ))}
         </div>
     )
 }
 
-export default Hero
+export default Hero;
