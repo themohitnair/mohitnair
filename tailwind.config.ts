@@ -12,6 +12,7 @@ const config: Config = {
                 'red-hot-metallic': 'linear-gradient(to right, #c53030, #ed8936, #faf089)',
                 'ocean-gradient': 'linear-gradient(to right, #00c6ff, #0072ff)',
                 'deep-ocean-gradient': 'linear-gradient(to right, #004e92, #000428)',
+                'sunset-lake': 'linear-gradient(0deg, #4a75d4, #d4a849)',
             },
             colors: {
                 primary: "#000000"
