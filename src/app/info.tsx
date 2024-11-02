@@ -7,24 +7,34 @@ export interface InfoProps {
     height: number
 }
 
-const Info: React.FC<InfoProps> = ({imagePath, alt, width, height}) => {
+export default function Info({ imagePath, alt, width, height }: InfoProps) {
     return (
-        <div className="text-2xl mt-10 flex justify-between">
-            <div>
-                <p className="text-3xl font-bold mb-4">Hi.</p>
-                <p className="text-3xl font-bold">
-                    I&apos;m                    
-                </p>
-                <p className="text-5xl font-bold text-blue-600">
-                        Mohit
-                    </p>
-                <p className="mt-10 text-xl text-gray-500">
-                    Welcome to my website. Here I share my projects, ideas and stuff I know.
-                </p>
+        <div className="bg-black text-white">
+            <div className="container mx-auto px-4 py-16 sm:py-24">
+                <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+                    <div className="w-full md:w-1/2 space-y-6">
+                        <h1 className="text-4xl sm:text-5xl font-bold text-white">
+                            Hi. I&apos;m{" "}
+                            <span className="text-5xl sm:text-6xl text-black bg-white inline-block px-2 py-1 transform -skew-x-6">
+                                Mohit
+                            </span>
+                        </h1>
+                        <p className="text-xl text-gray-300">
+                            Welcome to my website. Here I share my projects, ideas and stuff I know.
+                        </p>
+                        <div className="pt-4">
+                            <a href="/contact" className="inline-block bg-white text-black font-semibold py-3 px-6 rounded-md transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+                                Get in touch
+                            </a>
+                        </div>
+                    </div>
+                    <div className="w-full md:w-1/2">
+                        <div className="relative w-full aspect-square max-w-md mx-auto">
+                            <Image src={imagePath} alt={alt} layout="fill" objectFit="cover" className="rounded-2xl shadow-xl transition-transform hover:scale-105" priority/>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <Image src={imagePath} alt={alt} width={width} height={height} className="rounded-md"/>        
         </div>
     )
 }
-
-export default Info
