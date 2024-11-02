@@ -39,7 +39,7 @@ const Navbar: React.FC<NavbarProps> = ({ links }) => {
                 { isMenuOpen ? <X width={24} /> : <Menu height={24} /> }
             </button>
             {isMenuOpen && (
-                <div className="flex flex-col md:hidden items-end absolute top-full left-0 right-0 bg-transparent backdrop-blur-lg py-3 px-7 space-y-3 z-50 text-3xl sm:text-xl">
+                <div className="flex flex-col md:hidden items-end absolute top-full left-0 right-0 bg-transparent backdrop-blur-lg py-3 px-7 space-y-3 z-50 text-xl">
                     {links.map((item, key) => (
                         <Navlink text={item.text} link={item.link} key={key} />
                     ))}
