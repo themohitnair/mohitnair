@@ -13,7 +13,7 @@ const Info: React.FC<InfoProps> = ({ imagePath, alt }) => {
                     <div className="w-full space-y-6">
                         <h1 className="text-4xl sm:text-3xl font-bold text-white">
                             Hi. I&apos;m{" "}
-                            <span className="text-5xl sm:text-6xl text-black bg-sunset-lake inline-block px-2 py-1 transform -skew-x-12 transition-transform hover:scale-105">
+                            <span className="text-5xl sm:text-6xl text-black bg-notmain inline-block px-2 py-1 transform -skew-x-12 transition-transform hover:scale-105">
                                 Mohit
                             </span>
                         </h1>
@@ -21,7 +21,7 @@ const Info: React.FC<InfoProps> = ({ imagePath, alt }) => {
                             Welcome to my website. Here I share my projects, ideas and stuff I know.
                         </p>
                         <div className="pt-4">
-                            <a href="/contact" className="inline-block text-xl bg-sunset-lake text-black font-semibold py-3 px-6 rounded-md transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+                            <a href="/contact" className="inline-block text-xl bg-notmain text-black font-semibold py-3 px-6 rounded-md transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
                                 Get in touch
                             </a>
                         </div>

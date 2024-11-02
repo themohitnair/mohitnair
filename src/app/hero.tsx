@@ -1,5 +1,5 @@
 import Stuff, { StuffProps } from "./stuff";
-import { GraduationCap, Heart, ActivitySquare, Cpu } from "lucide-react";
+import { GraduationCap, Heart } from "lucide-react";
 
 const Hero: React.FC = () => {
     const stuff: StuffProps[] = [
@@ -21,30 +21,7 @@ const Hero: React.FC = () => {
                 "Computer Vision",
                 "Natural Language Processing",
             ]
-        },
-        {
-            icon: Cpu,
-            heading: "Tech Stack",
-            points: [
-                "FastAPI",
-                "React",
-                "HonoJS",
-                "NextJS",
-                "NodeJS",
-                "Pandas, Matplotlib, and Numpy",
-            ]
-        },
-        {
-            icon: ActivitySquare,
-            heading: "Hobbies",
-            points: [
-                "Chess",
-                "Food",
-                "History",
-                "Debates",
-                "Movies",
-            ]
-        }        
+        },     
     ]
     return (
         <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-4 mx-auto mt-10 px-4">
