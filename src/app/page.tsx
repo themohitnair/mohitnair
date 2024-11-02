@@ -1,11 +1,11 @@
-import { SiC, SiCloudflareworkers, SiCplusplus, SiFastapi, SiHono, SiJavascript, SiMysql, SiNumpy, SiPandas, SiSelenium, SiSqlite, SiTailwindcss, SiTypescript, SiWebdriverio } from "react-icons/si";
+import { SiArchlinux, SiC, SiCplusplus, SiFastapi, SiHono, SiJavascript, SiMysql, SiNumpy, SiPandas, SiSelenium, SiSqlite, SiTailwindcss, SiTypescript, SiWebdriverio } from "react-icons/si";
 import Hero from "./hero";
 import Info, { InfoProps } from "./info";
 import QuoteSection from "./quote";
 import Stack, { SkillProp } from "./stack";
 import { FaPython, FaReact } from "react-icons/fa6";
 import { RiNextjsLine } from "react-icons/ri";
-import { DiJava, DiMongodb, DiNodejs } from "react-icons/di";
+import { DiJava, DiLinux, DiMongodb, DiNodejs } from "react-icons/di";
 
 export default function Home() {
     const info: InfoProps = {
@@ -14,6 +14,14 @@ export default function Home() {
     }
 
     const skills: SkillProp[] = [
+        {
+            icon: DiLinux,
+            name: "Linux"
+        },
+        {
+            icon: SiArchlinux,
+            name: "Arch Linux"
+        },
         {
             icon: FaPython,
             name: "Python",
@@ -89,11 +97,7 @@ export default function Home() {
         {
             icon: SiSelenium,
             name: "Selenium"
-        },
-        {
-            icon: SiCloudflareworkers,
-            name: "Cloudflare Workers"
-        }
+        },        
     ]
 
     return (

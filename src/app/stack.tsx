@@ -14,7 +14,7 @@ export interface StackProp {
 const Skill: React.FC<SkillProp> = ({ icon: Icon, name }) => {
     return (
         <div className="flex flex-col items-center p-4 gap-y-3 rounded shadow-md hover:shadow-lg transition-transform hover:scale-105">
-            <Icon className="h-18 w-18 text-notmain"/>
+            <Icon className="h-24 w-24 text-notmain"/>
             <div className="text-center">
                 {name}
             </div>
