@@ -19,7 +19,7 @@ export default function Info({ imagePath, alt, width, height }: InfoProps) {
                                 Mohit
                             </span>
                         </h1>
-                        <p className="text-xl text-gray-300">
+                        <p className="text-xl ">
                             Welcome to my website. Here I share my projects, ideas and stuff I know.
                         </p>
                         <div className="pt-4">
