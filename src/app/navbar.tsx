@@ -35,7 +35,7 @@ const Navbar: React.FC<NavbarProps> = ({ links }) => {
                     <Navlink text={item.text} link={item.link} key={key} />
                 ))}
             </nav>
-            <button className="md:hidden text-black focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50 rounded-md p-2" onClick={() => setMenuOpen(!isMenuOpen)} aria-expanded={isMenuOpen} aria-label="Toggle menu">
+            <button className="md:hidden text-black focus:outline-none rounded-md p-2" onClick={() => setMenuOpen(!isMenuOpen)} aria-expanded={isMenuOpen} aria-label="Toggle menu">
                 { isMenuOpen ? <X width={24} /> : <Menu height={24} /> }
             </button>
             {isMenuOpen && (
