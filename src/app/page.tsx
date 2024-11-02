@@ -4,7 +4,7 @@ import QuoteSection from "./quote";
 
 export default function Home() {
     const info: InfoProps = {
-        imagePath: "/images/osm.jpg",
+        imagePath: "/images/lake.jpeg",
         alt: "Mohit in another amazing backdrop",
     }
 
