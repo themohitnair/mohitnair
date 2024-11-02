@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
         }        
     ]
     return (
-        <div className="grid grid-cols-2 gap-x-4 mx-auto mt-10 px-4">
+        <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-4 mx-auto mt-10 px-4">
             {stuff.map((item, key) => (
                 <Stuff key={key} icon={item.icon} heading={item.heading} points={item.points}/>
             ))}

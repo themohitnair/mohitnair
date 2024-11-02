@@ -9,12 +9,12 @@ export default function Home() {
     }
 
     return (
-        <div className="mx-auto pb-10 w-3/4">            
-            <Info imagePath={info.imagePath} alt={info.alt}/>
+        <div className="mx-auto pb-10 w-full px-4 sm:w-3/4 lg:w-2/3">
+            <Info imagePath={info.imagePath} alt={info.alt} />
 
-            <QuoteSection/>
+            <QuoteSection />
 
-            <Hero/>
+            <Hero />
         </div>
     );
 }

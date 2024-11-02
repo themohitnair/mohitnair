@@ -20,7 +20,7 @@ const Contacts = () => {
         }
     ]
     return (
-        <div className="grid grid-cols-2 gap-5 mt-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-10">
             {socials.map((item, key) => (
                 <Contact platform={item.platform} key={key} link={item.link} icon={item.icon}/>
             ))}
