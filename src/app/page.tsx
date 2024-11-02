@@ -1,11 +1,11 @@
-import { SiC, SiCloudflareworkers, SiCplusplus, SiFastapi, SiHono, SiJavascript, SiMysql, SiNumpy, SiPandas, SiSelenium, SiSqlalchemy, SiSqlite, SiTailwindcss, SiTypescript, SiWebdriverio } from "react-icons/si";
+import { SiC, SiCloudflareworkers, SiCplusplus, SiFastapi, SiHono, SiJavascript, SiMysql, SiNumpy, SiPandas, SiSelenium, SiSqlite, SiTailwindcss, SiTypescript, SiWebdriverio } from "react-icons/si";
 import Hero from "./hero";
 import Info, { InfoProps } from "./info";
 import QuoteSection from "./quote";
-import Stack, { SkillProp, StackProp } from "./stack";
+import Stack, { SkillProp } from "./stack";
 import { FaPython, FaReact } from "react-icons/fa6";
 import { RiNextjsLine } from "react-icons/ri";
-import { DiJava, DiJavascript, DiMongodb, DiNodejs } from "react-icons/di";
+import { DiJava, DiMongodb, DiNodejs } from "react-icons/di";
 
 export default function Home() {
     const info: InfoProps = {

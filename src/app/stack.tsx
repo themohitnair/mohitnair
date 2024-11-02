@@ -1,6 +1,5 @@
 import React from "react"
-import Link from "next/link"
-import { Cpu, LucideIcon } from "lucide-react"
+import { Cpu } from "lucide-react"
 import { IconType } from "react-icons"
 
 export interface SkillProp {
