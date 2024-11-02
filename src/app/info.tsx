@@ -15,7 +15,7 @@ export default function Info({ imagePath, alt, width, height }: InfoProps) {
                     <div className="w-full md:w-1/2 space-y-6">
                         <h1 className="text-4xl sm:text-5xl font-bold text-white">
                             Hi. I&apos;m{" "}
-                            <span className="text-5xl sm:text-6xl text-black bg-white inline-block px-2 py-1 transform -skew-x-6">
+                            <span className="text-5xl sm:text-6xl text-black bg-white inline-block px-2 py-1 transform -skew-x-12">
                                 Mohit
                             </span>
                         </h1>
