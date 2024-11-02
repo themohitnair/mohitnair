@@ -16,7 +16,7 @@ const Stuff: React.FC<StuffProps> = ({ icon: Icon, heading, points }) => {
                 </div>
 
                 {points.map((point, index) => (
-                    <div key={index} className="flex items-start p-4 rounded-lg shadow-md bg-gradient-to-r from-blue-900 via-purple-500 to-indigo-500 transition-transform duration-300 hover:scale-105">
+                    <div key={index} className="flex items-start p-4 rounded-lg shadow-md bg-ocean-gradient transition-transform duration-300 hover:scale-105">
                         <p className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-black">{point}</p>
                     </div>
                 ))}
