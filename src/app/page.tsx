@@ -6,6 +6,7 @@ import Stack, { SkillProp } from "./stack";
 import { FaPython, FaReact } from "react-icons/fa6";
 import { RiNextjsLine } from "react-icons/ri";
 import { DiLinux, DiMongodb, DiNodejs } from "react-icons/di";
+import Education from "./education";
 
 export default function Home() {
     const info: InfoProps = {
@@ -103,6 +104,8 @@ export default function Home() {
             <QuoteSection />
 
             <Stack skills={skills} />
+
+            <Education />
 
             <Hero />
         </div>
