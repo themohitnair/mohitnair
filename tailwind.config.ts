@@ -9,12 +9,7 @@ const config: Config = {
     theme: {
         extend: {
             backgroundImage: {
-                'sunset-lake': 'linear-gradient(0deg, #4a75d4, #d4a849)',
-            },
-            colors: {
-                primary: "#000000",
-                main: "#7CBDFF",
-                notmain: "#4057EB"
+                'notmain': 'linear-gradient(75deg, #4166f5, #0073cf, #3a506b)',
             },
             fontFamily: {
                 fra: "Fira"

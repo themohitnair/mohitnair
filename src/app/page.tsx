@@ -1,12 +1,10 @@
-import { SiArchlinux, SiC, SiCplusplus, SiFastapi, SiHono, SiJavascript, SiMysql, SiNumpy, SiPandas, SiSelenium, SiSqlite, SiTailwindcss, SiTypescript, SiWebdriverio } from "react-icons/si";
 import Hero from "./hero";
 import Info, { InfoProps } from "./info";
 import QuoteSection from "./quote";
 import Stack, { SkillProp } from "./stack";
-import { FaPython, FaReact } from "react-icons/fa6";
-import { RiNextjsLine } from "react-icons/ri";
-import { DiLinux, DiMongodb, DiNodejs } from "react-icons/di";
 import Education from "./education";
+import { ArchlinuxOriginal, CloudflareworkersOriginal, COriginal, CplusplusOriginal, FastapiOriginal, GitOriginal, JavaOriginal, JavascriptOriginal, LinuxOriginal, MatlabOriginal, MatplotlibOriginal, MongodbOriginal, MysqlOriginal, NextjsOriginal, NodejsOriginal, NumpyOriginal, PandasOriginal, PostgresqlOriginal, PythonOriginal, ReactOriginal, SeleniumOriginal, SqlalchemyOriginal, SqliteOriginal, TailwindcssOriginal, TypescriptOriginal } from "devicons-react";
+
 
 export default function Home() {
     const info: InfoProps = {
@@ -16,85 +14,105 @@ export default function Home() {
 
     const skills: SkillProp[] = [
         {
-            icon: DiLinux,
+            icon: LinuxOriginal,
             name: "Linux"
         },
         {
-            icon: SiArchlinux,
+            icon: ArchlinuxOriginal,
             name: "Arch Linux"
         },
         {
-            icon: FaPython,
+            icon: PythonOriginal,
             name: "Python",
         },
         {
-            icon: SiJavascript,
+            icon: JavascriptOriginal,
             name: "JavaScript"
         },
         {
-            icon: SiC,
+            icon: COriginal,
             name: "C"
         },
         {
-            icon: SiCplusplus,
+            icon: CplusplusOriginal,
             name: "C++"
         },
         {
-            icon: SiTypescript,
+            icon: TypescriptOriginal,
             name: "TypeScript"
         },
         {
-            icon: SiHono,
-            name: "HonoJS"
-        },
-        {
-            icon: DiNodejs,
+            icon: NodejsOriginal,
             name: "NodeJS"
         },
         {
-            icon: SiFastapi,
+            icon: FastapiOriginal,
             name: "FastAPI",
         },
         {
-            icon: FaReact,
+            icon: ReactOriginal,
             name: "React",
         },
         {
-            icon: RiNextjsLine,
+            icon: NextjsOriginal,
             name: "NextJS",
         },
         {
-            icon: DiMongodb,
+            icon: MongodbOriginal,
             name: "MongoDB",
         },
         {
-            icon: SiPandas,
+            icon: PandasOriginal,
             name: "Pandas"
         },
         {
-            icon: SiNumpy,
+            icon: NumpyOriginal,
             name: "Numpy"
         },
         {
-            icon: SiTailwindcss,
+            icon: TailwindcssOriginal,
             name: "TailwindCSS"
         },
         {
-            icon: SiSqlite,
+            icon: SqliteOriginal,
             name: "SQLite"
         },
         {
-            icon: SiMysql,
+            icon: MysqlOriginal,
             name: "MySQL"
         },
         {
-            icon: SiWebdriverio,
+            icon: SeleniumOriginal,
             name: "WebDriverIO"
         },
         {
-            icon: SiSelenium,
-            name: "Selenium"
-        },        
+            icon: GitOriginal,
+            name: "Git"
+        },
+        {
+            icon: CloudflareworkersOriginal,
+            name: "Cloudflare Workers"
+        },
+        {
+            icon: MatplotlibOriginal,
+            name: "Matplotlib"
+        },
+        {
+            icon: MatlabOriginal,
+            name: "MatLab"
+        },
+        {
+            icon: JavaOriginal,
+            name: "Java"
+        },
+        {
+            icon: SqlalchemyOriginal,
+            name: "SQLAlchemy"
+        },
+        {
+            icon: PostgresqlOriginal,
+            name: "PostgreSQL"
+        }
     ]
 
     return (

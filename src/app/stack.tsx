@@ -1,9 +1,9 @@
 import React from "react"
 import { Cpu } from "lucide-react"
-import { IconType } from "react-icons"
+import { LinuxOriginal } from "devicons-react"
 
 export interface SkillProp {
-    icon: IconType
+    icon: typeof LinuxOriginal
     name: string
 }
 
@@ -14,7 +14,7 @@ export interface StackProp {
 const Skill: React.FC<SkillProp> = ({ icon: Icon, name }) => {
     return (
         <div className="flex flex-col items-center p-4 gap-y-3 rounded shadow-md hover:shadow-lg transition-transform hover:scale-105">
-            <Icon className="h-24 w-24 text-notmain"/>
+            <Icon size={90} className="text-notmain"/>
             <div className="text-center">
                 {name}
             </div>
@@ -27,10 +27,10 @@ const Stack: React.FC<StackProp> = ({ skills }) => {
         <div className="container mt-10 px-10 w-full">
             <div className="mx-auto space-y-6">
                 <div className="flex items-center gap-4 mb-6 text-center">
-                    <Cpu className="w-8 h-8 text-notmain" />
+                    <Cpu className="w-8 h-8 text-blue-400" />
                     <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-white">Skills</h2>
                 </div>
-                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
                     {skills.map((skillProps, index) => (
                         <Skill key={index} icon={skillProps.icon} name={skillProps.name} />
                     ))}

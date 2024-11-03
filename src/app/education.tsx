@@ -37,7 +37,7 @@ const Education: React.FC = () => {
     return (
         <div className="container mx-auto mt-10 px-4">
             <div className="flex items-center gap-4 mb-6">
-                <GraduationCap className="w-8 h-8 text-notmain mr-2" />
+                <GraduationCap className="w-8 h-8 text-blue-400 mr-2" />
                 <h2 className="text-2xl font-bold text-white">Education</h2>
             </div>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

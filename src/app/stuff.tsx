@@ -1,5 +1,4 @@
 import { LucideIcon } from "lucide-react";
-
 export interface StuffProps {
     icon: LucideIcon
     heading: string
@@ -11,7 +10,7 @@ const Stuff: React.FC<StuffProps> = ({ icon: Icon, heading, points }) => {
         <div className="container mx-auto mt-5 px-4">
             <div className="max-w-xl mx-auto space-y-6">
                 <div className="flex items-center gap-4 mb-6">
-                    <Icon className="w-8 h-8 text-notmain" />
+                    <Icon className="w-8 h-8 text-blue-400" />
                     <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-white">{heading}</h2>
                 </div>
 
