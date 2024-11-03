@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { MapPin, Calendar } from 'lucide-react'
+import { MapPin, Calendar, GraduationCap } from 'lucide-react'
 import React from 'react'
 
 interface EducationEntry {
@@ -36,7 +36,10 @@ const Education: React.FC = () => {
     ]
     return (
         <div className="container mx-auto mt-10 px-4">
-            <h2 className="text-2xl font-bold text-white mb-6">Education</h2>
+            <div className="flex items-center gap-4 mb-6">
+                <GraduationCap className="w-8 h-8 text-notmain mr-2" />
+                <h2 className="text-2xl font-bold text-white">Education</h2>
+            </div>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {entries.map((entry, index) => (
                     <div key={index} className="bg-notmain rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
