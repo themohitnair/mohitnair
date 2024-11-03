@@ -1,4 +1,3 @@
-import { MailIcon } from "lucide-react"
 import Contact, { ContactProps } from "./contact"
 import { FaGithub, FaLinkedin } from "react-icons/fa6"
 import { SiChessdotcom, SiProtonmail } from "react-icons/si"
