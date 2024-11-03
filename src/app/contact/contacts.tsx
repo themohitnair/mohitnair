@@ -1,6 +1,7 @@
+import { MailIcon } from "lucide-react"
 import Contact, { ContactProps } from "./contact"
 import { FaGithub, FaLinkedin } from "react-icons/fa6"
-import { SiChessdotcom } from "react-icons/si"
+import { SiChessdotcom, SiProtonmail } from "react-icons/si"
 
 const Contacts = () => {
     const socials: ContactProps[] = [
@@ -18,6 +19,11 @@ const Contacts = () => {
             platform: "chess.com",
             link: "https://www.chess.com/member/skywalkeraboard",
             icon: SiChessdotcom
+        },
+        {
+            platform: "Mail",
+            link: "mailto:themohitnair@protonmail.com",
+            icon: SiProtonmail
         }
     ]
     return (
