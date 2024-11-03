@@ -11,7 +11,7 @@ interface EducationEntry {
 }
 
 const Education: React.FC = () => {
-    const entries = [
+    const entries: EducationEntry[] = [
         {
             year: '2026',
             location: 'Bangalore, India',
