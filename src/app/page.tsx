@@ -83,7 +83,7 @@ export default function Home() {
         },
         {
             icon: SeleniumOriginal,
-            name: "WebDriverIO"
+            name: "Selenium"
         },
         {
             icon: GitOriginal,
