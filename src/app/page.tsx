@@ -3,7 +3,7 @@ import Info, { InfoProps } from "./info";
 import QuoteSection from "./quote";
 import Stack, { SkillProp } from "./stack";
 import Education from "./education";
-import { ArchlinuxOriginal, CloudflareworkersOriginal, COriginal, CplusplusOriginal, FastapiOriginal, GitOriginal, JavaOriginal, JavascriptOriginal, LinuxOriginal, MatlabOriginal, MatplotlibOriginal, MongodbOriginal, MysqlOriginal, NextjsOriginal, NodejsOriginal, NumpyOriginal, PandasOriginal, PostgresqlOriginal, PythonOriginal, ReactOriginal, SeleniumOriginal, SqlalchemyOriginal, SqliteOriginal, TailwindcssOriginal, TypescriptOriginal } from "devicons-react";
+import { ArchlinuxOriginal, CloudflareworkersOriginal, COriginal, CplusplusOriginal, FastapiOriginal, GitOriginal, JavaOriginal, JavascriptOriginal, LinuxOriginal, MatplotlibOriginal, MongodbOriginal, MysqlOriginal, NextjsOriginal, NodejsOriginal, NumpyOriginal, PandasOriginal, PostgresqlOriginal, PythonOriginal, ReactOriginal, SeleniumOriginal, SqlalchemyOriginal, SqliteOriginal, TailwindcssOriginal, TypescriptOriginal } from "devicons-react";
 
 
 export default function Home() {
