@@ -98,10 +98,6 @@ export default function Home() {
             name: "Matplotlib"
         },
         {
-            icon: MatlabOriginal,
-            name: "MatLab"
-        },
-        {
             icon: JavaOriginal,
             name: "Java"
         },

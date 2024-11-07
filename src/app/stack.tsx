@@ -14,7 +14,7 @@ export interface StackProp {
 const Skill: React.FC<SkillProp> = ({ icon: Icon, name }) => {
     return (
         <div className="flex flex-col items-center p-4 gap-y-3 rounded shadow-md hover:shadow-lg transition-transform hover:scale-105">
-            <Icon size={90} className="text-notmain"/>
+            <Icon size={65} className="text-notmain w-10"/>
             <div className="text-center">
                 {name}
             </div>
@@ -30,7 +30,7 @@ const Stack: React.FC<StackProp> = ({ skills }) => {
                     <Cpu className="w-8 h-8 text-blue-400" />
                     <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-white">Skills</h2>
                 </div>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3">
                     {skills.map((skillProps, index) => (
                         <Skill key={index} icon={skillProps.icon} name={skillProps.name} />
                     ))}
