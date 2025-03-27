@@ -1,0 +1,39 @@
+---
+import { Code } from "lucide-astro";
+import skills from "../data/skills.json";
+---
+
+<section id="skills" class="py-20 bg-gray-900">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Technical Skills</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">
+        A collection of technologies and tools I've worked with throughout my
+        career.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {
+        skills.categories.map((category) => (
+          <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:shadow-accent/10">
+            <h3 class="text-xl font-semibold mb-4 text-center">
+              {category.name}
+            </h3>
+
+            <div class="grid grid-cols-2 gap-4">
+              {category.skills.map((skill) => (
+                <div class="flex items-center gap-3 p-3 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
+                  <div class="w-10 h-10 rounded-md bg-accent/20 flex items-center justify-center text-accent">
+                    <Code class="w-5 h-5" />
+                  </div>
+                  <span>{skill.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

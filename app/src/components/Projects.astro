@@ -1,0 +1,76 @@
+---
+import { ExternalLink, Github } from "lucide-astro";
+import projects from "../data/projects.json";
+---
+
+<section id="projects" class="py-20 bg-gray-900">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">
+        A selection of projects I've worked on, showcasing my skills and
+        experience.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+      {
+        projects.projects.map((project) => (
+          <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700/50 hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:shadow-accent/10 group">
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2 group-hover:text-accent transition-colors">
+                {project.title}
+              </h3>
+              <p class="text-gray-300 mb-4">{project.description}</p>
+
+              <div class="flex flex-wrap gap-2 mb-6">
+                {project.technologies.map((tech) => (
+                  <span class="px-3 py-1 bg-gray-700/50 rounded-full text-xs font-medium text-gray-300">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              <div class="flex gap-4">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center gap-2 text-gray-300 hover:text-accent transition-colors"
+                >
+                  <Github class="w-5 h-5" />
+                  <span>Code</span>
+                </a>
+
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center gap-2 text-gray-300 hover:text-accent transition-colors"
+                >
+                  <ExternalLink class="w-5 h-5" />
+                  <span>Live Demo</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="text-center mt-12">
+      <a
+        href="https://github.com/themohitnair"
+        target="_blank"
+        rel="noopener noreferrer"
+        rel="
+        noopener
+        noreferrer"
+        class="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-md font-medium transition-colors"
+      >
+        <Github class="w-5 h-5" />
+        View More Projects on GitHub
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,15 @@
+{
+  "name": "Mohit Nair",
+  "title": "Software Developer",
+  "bio": "Passionate software developer with a focus on creating elegant, efficient solutions to complex problems.",
+  "image": "/images/profile.jpeg",
+  "social": {
+    "github": "https://github.com/themohitnair",
+    "linkedin": "https://linkedin.com/in/themohitnair",
+    "twitter": "https://x.com/redeemskywalker",
+    "chess": "https://chess.com/member/skywalkeraboard",
+    "email": "themohitnair@protonmail.com"
+  },
+  "resumeUrl": "/resume.pdf"
+}
+

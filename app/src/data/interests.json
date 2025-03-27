@@ -1,0 +1,30 @@
+{
+  "interests": [
+    {
+      "name": "Chess",
+      "icon": "chess",
+      "description": "My favourite game"
+    },
+    {
+      "name": "Open Source",
+      "icon": "camera",
+      "description": "FOSS Forever!"
+    },
+    {
+      "name": "Food",
+      "icon": "mountain",
+      "description": "What's life without Burgers and Croissants?"
+    },
+    {
+      "name": "Movies",
+      "icon": "book",
+      "description": "TDK is the OG!"
+    },
+    {
+      "name": "Artificial Intelligence",
+      "icon": "code",
+      "description": "Love this new field!"
+    }
+  ]
+}
+

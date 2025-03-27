@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { FileQuestion, Home } from "lucide-astro";
+---
+
+<Layout title="Page Not Found | Mohit Nair">
+  <div
+    class="min-h-[70vh] flex flex-col items-center justify-center px-4 py-20"
+  >
+    <div class="text-center">
+      <div class="flex justify-center mb-6">
+        <div class="relative">
+          <FileQuestion class="w-24 h-24 text-gray-700" />
+          <div
+            class="absolute -top-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center"
+          >
+            <span class="text-white font-bold">?</span>
+          </div>
+        </div>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">404 - Page Not Found</h1>
+      <p class="text-xl text-gray-400 mb-8 max-w-md mx-auto">
+        The page you're looking for doesn't exist or has been moved.
+      </p>
+
+      <a
+        href="/"
+        class="px-6 py-3 bg-accent hover:bg-accent/80 text-white rounded-md font-medium inline-flex items-center gap-2 transition-colors"
+      >
+        <Home class="w-5 h-5" />
+        Back to Home
+      </a>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,26 @@
+{
+  "institutions": [
+    {
+      "name": "Ramaiah Institute of Technology",
+      "degree": "Bachelor of Engineering",
+      "years": "2022 - Present",
+      "description": "Specialized in Information Science Engineering",
+      "location": "Bangalore, India"
+    },
+    {
+      "name": "Presidency PU College",
+      "degree": "Karnataka State Board",
+      "years": "2020 - 2022",
+      "description": "Physics, Chemistry, Mathematics and Computer Science",
+      "location": "Bangalore, India"
+    },
+    {
+      "name": "Federal Public School",
+      "degree": "Indian Certificate of Secondary Education",
+      "years": "2014 - 2020",
+      "description": "Physics, Chemistry, Mathematics and Computer Science",
+      "location": "Bangalore, India"
+    }
+  ]
+}
+

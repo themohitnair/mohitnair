@@ -1,0 +1,33 @@
+{
+  "categories": [
+    {
+      "name": "Frontend",
+      "skills": [
+        { "name": "HTML", "icon": "html" },
+        { "name": "CSS", "icon": "css" },
+        { "name": "JavaScript", "icon": "javascript" },
+        { "name": "React", "icon": "react" },
+        { "name": "Tailwind CSS", "icon": "tailwind" }
+      ]
+    },
+    {
+      "name": "Backend",
+      "skills": [
+        { "name": "Node.js", "icon": "nodejs" },
+        { "name": "Express", "icon": "express" },
+        { "name": "Python", "icon": "python" },
+        { "name": "Django", "icon": "django" }
+      ]
+    },
+    {
+      "name": "Tools & Others",
+      "skills": [
+        { "name": "Git", "icon": "git" },
+        { "name": "Docker", "icon": "docker" },
+        { "name": "AWS", "icon": "aws" },
+        { "name": "VS Code", "icon": "vscode" }
+      ]
+    }
+  ]
+}
+
