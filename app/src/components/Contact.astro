@@ -110,7 +110,12 @@ import profile from "../data/profile.json";
       >
         <h3 class="text-xl font-semibold mb-6">Send Me a Message</h3>
 
-        <form id="contact-form" class="space-y-4">
+        <form
+          id="contact-form"
+          action="https://formspree.io/f/manedqdn"
+          method="POST"
+          class="space-y-4"
+        >
           <div>
             <label
               for="name"
@@ -185,20 +190,42 @@ import profile from "../data/profile.json";
   document.addEventListener("astro:page-load", () => {
     const contactForm = document.getElementById(
       "contact-form"
-    ) as HTMLFormElement;
-    const formSuccess = document.getElementById("form-success");
-    const formError = document.getElementById("form-error");
+    ) as HTMLFormElement | null;
+    const formSuccess = document.getElementById(
+      "form-success"
+    ) as HTMLElement | null;
+    const formError = document.getElementById(
+      "form-error"
+    ) as HTMLElement | null;
 
-    contactForm?.addEventListener("submit", (e) => {
+    if (!contactForm) return;
+
+    contactForm.addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      formSuccess?.classList.remove("hidden");
+      const formData = new FormData(contactForm);
 
-      contactForm.reset();
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          body: formData,
+          headers: { Accept: "application/json" },
+        });
 
-      setTimeout(() => {
+        if (response.ok) {
+          formSuccess?.classList.remove("hidden");
+          formError?.classList.add("hidden");
+          contactForm.reset();
+          setTimeout(() => {
+            formSuccess?.classList.add("hidden");
+          }, 5000);
+        } else {
+          throw new Error("Form submission failed");
+        }
+      } catch (error) {
+        formError?.classList.remove("hidden");
         formSuccess?.classList.add("hidden");
-      }, 5000);
+      }
     });
   });
 </script>
