@@ -17,7 +17,7 @@
     {
       "title": "RIT TitleCraft",
       "description": "A free service that generates academic titlepages without hassle involved.",
-      "technologies": ["NextJS", "python-docx", "FastAPI", "AWS EC2"],
+      "technologies": ["NextJS", "python-docx", "FastAPI", "AWS EC2", "nginx"],
       "github": "https://github.com/themohitnair/rit-titlepage",
       "demo": "https://rit-titlepage.vercel.app"
     },
