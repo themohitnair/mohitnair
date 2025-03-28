@@ -6,133 +6,167 @@ import profile from "../data/profile.json";
 <header
   class="sticky top-0 z-50 bg-background-dark/80 backdrop-blur-md border-b border-gray-800"
 >
-  <div class="container mx-auto px-4 py-3">
+  <div class="container mx-auto px-6 py-4 md:py-3">
     <nav class="flex items-center justify-between">
-      <a href="/" class="text-xl font-bold text-white flex items-center gap-2">
-        <span class="text-accent">{profile.name.split(" ")[0]}</span>
-        <span class="text-accent">{profile.name.split(" ")[1]}</span>
+      <a
+        href="/"
+        class="text-xl font-bold text-white flex items-center gap-2 hover:scale-105 transition-transform duration-300"
+      >
+        <span
+          class="bg-gradient-to-r from-accent to-purple-500 bg-clip-text text-transparent"
+        >
+          {profile.name.split(" ")[0]}
+        </span>
+        <span
+          class="bg-gradient-to-r from-purple-500 to-accent bg-clip-text text-transparent"
+        >
+          {profile.name.split(" ")[1]}
+        </span>
       </a>
 
       <!-- Mobile menu button -->
       <button
         id="menu-toggle"
-        class="md:hidden text-white"
+        class="md:hidden text-white focus:outline-none hover:text-accent transition-colors duration-300"
         aria-label="Toggle menu"
       >
         <Menu class="w-6 h-6" />
       </button>
 
+      <!-- Desktop Nav -->
       <div class="hidden md:flex items-center gap-6">
-        <a
-          href="/#about"
-          class="text-sm text-gray-300 hover:text-white transition-colors"
-          >About</a
-        >
-        <a
-          href="/#skills"
-          class="text-sm text-gray-300 hover:text-white transition-colors"
-          >Skills</a
-        >
-        <a
-          href="/#education"
-          class="text-sm text-gray-300 hover:text-white transition-colors"
-          >Education</a
-        >
-        <a
-          href="/#projects"
-          class="text-sm text-gray-300 hover:text-white transition-colors"
-          >Projects</a
-        >
-        <a
-          href="/#interests"
-          class="text-sm text-gray-300 hover:text-white transition-colors"
-          >Interests</a
-        >
-        <a
-          href="/#contact"
-          class="text-sm text-gray-300 hover:text-white transition-colors"
-          >Contact</a
-        >
+        {
+          [
+            "About",
+            "Skills",
+            "Education",
+            "Projects",
+            "Interests",
+            "Contact",
+          ].map((item) => (
+            <a
+              href={`/#${item.toLowerCase()}`}
+              class="relative text-sm text-gray-300 hover:text-white transition-colors duration-300 group"
+            >
+              {item}
+              <span class="absolute inset-x-0 bottom-0 h-0.5 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
+            </a>
+          ))
+        }
         <a
           href={profile.resumeUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="px-4 py-2 bg-accent text-white rounded-md text-sm font-medium hover:bg-accent/80 transition-colors"
+          class="relative px-4 py-2 overflow-hidden group bg-accent rounded-md text-sm font-medium text-white transition-all duration-300 ease-out hover:bg-accent/90 hover:scale-105 whitespace-nowrap"
         >
-          Resume
-        </a>
-      </div>
-
-      <div
-        id="mobile-menu"
-        class="fixed inset-0 bg-background-dark/95 flex flex-col items-center justify-center gap-8 text-lg transform translate-x-full transition-transform duration-300 ease-in-out md:hidden"
-      >
-        <button
-          id="close-menu"
-          class="absolute top-4 right-4 text-white"
-          aria-label="Close menu"
-        >
-          <XCircle class="w-6 h-6" />
-        </button>
-        <a
-          href="/#about"
-          class="text-gray-300 hover:text-white transition-colors">About</a
-        >
-        <a
-          href="/#skills"
-          class="text-gray-300 hover:text-white transition-colors">Skills</a
-        >
-        <a
-          href="/#education"
-          class="text-gray-300 hover:text-white transition-colors">Education</a
-        >
-        <a
-          href="/#projects"
-          class="text-gray-300 hover:text-white transition-colors">Projects</a
-        >
-        <a
-          href="/#interests"
-          class="text-gray-300 hover:text-white transition-colors">Interests</a
-        >
-        <a
-          href="/#contact"
-          class="text-gray-300 hover:text-white transition-colors">Contact</a
-        >
-        <a
-          href={profile.resumeUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="px-6 py-2 bg-accent text-white rounded-md font-medium hover:bg-accent/80 transition-colors"
-        >
+          <span
+            class="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"
+          ></span>
           Resume
         </a>
       </div>
     </nav>
   </div>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="fixed inset-0 bg-background-dark backdrop-blur-lg transform translate-x-full transition-transform duration-500 ease-in-out flex flex-col items-center gap-6 pt-22 p-4 md:p-2 md:hidden z-50"
+  >
+    <!-- Close Button -->
+    <button
+      id="close-menu"
+      class="absolute top-6 right-6 text-white hover:text-accent transition-colors hover:rotate-90 transform duration-300"
+    >
+      <XCircle class="w-8 h-8" />
+    </button>
+
+    {
+      ["About", "Skills", "Education", "Projects", "Interests", "Contact"].map(
+        (item, index) => (
+          <a
+            href={`/#${item.toLowerCase()}`}
+            class="text-lg text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 transform mobile-menu-item"
+            style={`animation-delay: ${index * 100}ms`}
+          >
+            {item}
+          </a>
+        )
+      )
+    }
+  </div>
 </header>
 
+<style>
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .mobile-menu-item {
+    opacity: 0;
+    animation: fadeInRight 0.5s ease forwards;
+  }
+
+  #mobile-menu.translate-x-full .mobile-menu-item {
+    animation: none;
+    opacity: 0;
+  }
+</style>
+
 <script>
-  document.addEventListener("astro:page-load", () => {
+  const setupMenu = () => {
     const menuToggle = document.getElementById("menu-toggle");
     const closeMenu = document.getElementById("close-menu");
     const mobileMenu = document.getElementById("mobile-menu");
-    const mobileLinks = document.querySelectorAll("#mobile-menu a");
+    const mobileMenuLinks = mobileMenu?.querySelectorAll("a");
+
+    const closeMenuFn = () => {
+      mobileMenu?.classList.add("translate-x-full");
+      document.body.style.overflow = "";
+    };
 
     menuToggle?.addEventListener("click", () => {
       mobileMenu?.classList.remove("translate-x-full");
       document.body.style.overflow = "hidden";
     });
 
-    closeMenu?.addEventListener("click", () => {
-      mobileMenu?.classList.add("translate-x-full");
-      document.body.style.overflow = "";
+    closeMenu?.addEventListener("click", closeMenuFn);
+
+    mobileMenuLinks?.forEach((link) => {
+      link.addEventListener("click", closeMenuFn);
     });
 
-    mobileLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        mobileMenu?.classList.add("translate-x-full");
-        document.body.style.overflow = "";
-      });
+    // Close menu when clicking outside
+    document.addEventListener("click", (event) => {
+      const target = event.target as HTMLElement;
+      if (
+        mobileMenu &&
+        menuToggle &&
+        !mobileMenu.contains(target) &&
+        !menuToggle.contains(target)
+      ) {
+        closeMenuFn();
+      }
     });
-  });
+
+    // Handle escape key
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeMenuFn();
+      }
+    });
+  };
+
+  // Setup on initial load
+  setupMenu();
+
+  // Setup on client-side navigation
+  document.addEventListener("astro:page-load", setupMenu);
 </script>

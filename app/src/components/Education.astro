@@ -5,7 +5,7 @@ import education from '../data/education.json';
 
 <section id="education" class="py-20">
   <div class="container mx-auto px-4">
-    <div class="text-center mb-16">
+    <div class="text-center mb-16 reveal-animation">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Education Journey</h2>
       <p class="text-gray-400 max-w-2xl mx-auto">
         My academic background and educational qualifications.
@@ -14,16 +14,16 @@ import education from '../data/education.json';
     
     <div class="relative max-w-3xl mx-auto">
       <!-- Timeline line -->
-      <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent via-accent/50 to-gray-700 transform md:translate-x-px"></div>
+      <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent via-accent/50 to-gray-700 transform md:translate-x-px timeline-line"></div>
       
       {education.institutions.map((institution, index) => (
-        <div class={`relative flex flex-col md:flex-row gap-8 mb-12 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+        <div class={`relative flex flex-col md:flex-row gap-8 mb-12 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} education-item`} data-index={index}>
           <!-- Timeline dot -->
-          <div class="absolute left-0 md:left-1/2 top-0 w-5 h-5 rounded-full bg-accent border-4 border-gray-900 transform -translate-x-2 md:-translate-x-2.5"></div>
+          <div class="absolute left-0 md:left-1/2 top-0 w-5 h-5 rounded-full bg-accent border-4 border-gray-900 transform -translate-x-2 md:-translate-x-2.5 timeline-dot"></div>
           
           <!-- Content -->
           <div class="md:w-1/2 ml-8 md:ml-0 md:px-8">
-            <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 hover:border-accent/30 transition-all duration-300 hover:shadow-lg hover:shadow-accent/10">
+            <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 hover:border-accent/30 transition-all duration-300 hover:shadow-lg hover:shadow-accent/10 education-card">
               <div class="flex items-center gap-2 mb-2">
                 <School class="w-5 h-5 text-accent" />
                 <h3 class="text-xl font-semibold">{institution.name}</h3>
@@ -56,3 +56,163 @@ import education from '../data/education.json';
   </div>
 </section>
 
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes growLine {
+    from {
+      transform: scaleY(0);
+      transform-origin: top;
+    }
+    to {
+      transform: scaleY(1);
+      transform-origin: top;
+    }
+  }
+
+  @keyframes popIn {
+    0% {
+      opacity: 0;
+      transform: translate(-2px, 0) scale(0);
+    }
+    70% {
+      opacity: 1;
+      transform: translate(-2px, 0) scale(1.2);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-2px, 0) scale(1);
+    }
+  }
+
+  @media (min-width: 768px) {
+    @keyframes popIn {
+      0% {
+        opacity: 0;
+        transform: translate(-2.5px, 0) scale(0);
+      }
+      70% {
+        opacity: 1;
+        transform: translate(-2.5px, 0) scale(1.2);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-2.5px, 0) scale(1);
+      }
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .reveal-animation {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+  }
+
+  .timeline-line {
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+
+  .timeline-dot {
+    opacity: 0;
+  }
+
+  .education-card {
+    opacity: 0;
+  }
+
+  .education-item:nth-child(odd) .education-card {
+    transform: translateX(-30px);
+  }
+
+  .education-item:nth-child(even) .education-card {
+    transform: translateX(30px);
+  }
+</style>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Animate section title
+            const title = entry.target.querySelector(".reveal-animation");
+            if (title) {
+              (title as HTMLElement).style.opacity = "1";
+            }
+
+            // Animate timeline line
+            const line = entry.target.querySelector(".timeline-line");
+            if (line) {
+              (line as HTMLElement).style.animation = "growLine 1.5s ease forwards";
+            }
+
+            // Animate education items with staggered delay
+            const items = entry.target.querySelectorAll(".education-item");
+            items.forEach((item, index) => {
+              setTimeout(() => {
+                // Animate timeline dot
+                const dot = item.querySelector(".timeline-dot");
+                if (dot) {
+                  (dot as HTMLElement).style.animation = "popIn 0.5s forwards";
+                }
+                
+                // Animate education card
+                const card = item.querySelector(".education-card");
+                if (card) {
+                  (card as HTMLElement).style.opacity = "1";
+                  
+                  if (index % 2 === 0) {
+                    (card as HTMLElement).style.animation = "slideInRight 0.5s forwards";
+                  } else {
+                    (card as HTMLElement).style.animation = "slideInLeft 0.5s forwards";
+                  }
+                }
+              }, 300 * index);
+            });
+
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    // Observe the education section
+    const educationSection = document.getElementById("education");
+    if (educationSection) {
+      observer.observe(educationSection);
+    }
+  });
+</script>

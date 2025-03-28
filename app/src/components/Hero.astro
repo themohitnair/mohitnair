@@ -13,21 +13,25 @@ import profile from "../data/profile.json";
 
   <div class="container mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <div class="order-2 lg:order-1">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-          Hi, I'm <span class="text-accent"
+      <div class="order-2 lg:order-1 hero-content">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 hero-title">
+          Hi, I'm <span class="text-accent hero-name"
             >{profile.name.split(" ")[0]} {profile.name.split(" ")[1]}</span
           >
         </h1>
-        <h2 class="text-2xl md:text-3xl text-gray-300 mb-6">{profile.title}</h2>
-        <p class="text-gray-400 text-lg mb-8 max-w-lg">{profile.bio}</p>
+        <h2 class="text-2xl md:text-3xl text-gray-300 mb-6 hero-subtitle">
+          {profile.title}
+        </h2>
+        <p class="text-gray-400 text-lg mb-8 max-w-lg hero-bio">
+          {profile.bio}
+        </p>
 
-        <div class="flex flex-wrap gap-4">
+        <div class="flex flex-wrap gap-4 hero-buttons">
           <a
             href={profile.social.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            class="px-6 py-3 bg-accent hover:bg-accent/80 text-white rounded-md font-medium flex items-center gap-2 transition-colors"
+            class="px-6 py-3 bg-accent hover:bg-accent/80 text-white rounded-md font-medium flex items-center gap-2 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-accent/20"
           >
             <Linkedin class="w-5 h-5" />
             Connect on LinkedIn
@@ -37,23 +41,25 @@ import profile from "../data/profile.json";
             href={profile.social.github}
             target="_blank"
             rel="noopener noreferrer"
-            class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-md font-medium flex items-center gap-2 transition-colors"
+            class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-md font-medium flex items-center gap-2 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-gray-700/20"
           >
             <Github class="w-5 h-5" />
             Follow on GitHub
           </a>
         </div>
 
-        <div class="mt-12 flex items-center gap-2 text-gray-400">
+        <div
+          class="mt-12 flex items-center gap-2 text-gray-400 animate-bounce hero-scroll"
+        >
           <Mouse class="w-5 h-5" />
           <span>Scroll down to explore</span>
         </div>
       </div>
 
-      <div class="order-1 lg:order-2 flex justify-center">
+      <div class="order-1 lg:order-2 flex justify-center hero-image">
         <div class="relative">
           <div
-            class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-accent/30 relative z-10"
+            class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-accent/30 relative z-10 profile-image"
           >
             <img
               src={profile.image || "/placeholder.svg"}
@@ -63,7 +69,9 @@ import profile from "../data/profile.json";
             />
           </div>
 
-          <div class="absolute inset-0 rounded-full bg-accent/20 blur-xl -z-10">
+          <div
+            class="absolute inset-0 rounded-full bg-accent/20 blur-xl -z-10 profile-glow"
+          >
           </div>
         </div>
       </div>
@@ -71,13 +79,220 @@ import profile from "../data/profile.json";
   </div>
 </section>
 
-<script>
-  document.addEventListener("astro:page-load", () => {
-    const scrollIndicator = document.querySelector(".hero-scroll-indicator");
-    if (scrollIndicator) {
-      setInterval(() => {
-        scrollIndicator.classList.toggle("translate-y-1");
-      }, 1000);
+<style>
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
     }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes floatAnimation {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes pulseGlow {
+    0% {
+      opacity: 0.5;
+      transform: scale(0.95);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+    100% {
+      opacity: 0.5;
+      transform: scale(0.95);
+    }
+  }
+
+  .hero-title {
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+    animation-delay: 0.2s;
+  }
+
+  .hero-name {
+    display: inline-block;
+    position: relative;
+  }
+
+  .hero-name::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-color, #3b82f6);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.5s ease-out;
+  }
+
+  .hero-name:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  .hero-subtitle {
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+    animation-delay: 0.4s;
+  }
+
+  .hero-bio {
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+    animation-delay: 0.6s;
+  }
+
+  .hero-buttons {
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+    animation-delay: 0.8s;
+  }
+
+  .hero-scroll {
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+    animation-delay: 1.4s;
+  }
+
+  .hero-image {
+    opacity: 0;
+    animation: scaleIn 1s ease forwards;
+    animation-delay: 0.3s;
+  }
+
+  .profile-image {
+    animation: floatAnimation 6s ease-in-out infinite;
+  }
+
+  .profile-glow {
+    animation: pulseGlow 4s ease-in-out infinite;
+  }
+</style>
+
+<script>
+  import { tsParticles } from "tsparticles-engine";
+
+  document.addEventListener("astro:page-load", async () => {
+    await tsParticles.load("particles-js", {
+      particles: {
+        number: {
+          value: 50,
+          density: {
+            enable: true,
+            value_area: 800,
+          },
+        },
+        color: {
+          value: "#3B82F6",
+        },
+        shape: {
+          type: "circle",
+        },
+        opacity: {
+          value: 0.5,
+          random: false,
+          anim: {
+            enable: true,
+            speed: 0.5,
+            opacity_min: 0.1,
+            sync: false,
+          },
+        },
+        size: {
+          value: 3,
+          random: true,
+          anim: {
+            enable: true,
+            speed: 2,
+            size_min: 0.1,
+            sync: false,
+          },
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#3B82F6",
+          opacity: 0.2,
+          width: 1,
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: "none",
+          random: true,
+          straight: false,
+          out_mode: "out",
+          bounce: false,
+          attract: {
+            enable: true,
+            rotateX: 600,
+            rotateY: 1200,
+          },
+        },
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: {
+            enable: true,
+            mode: "grab",
+          },
+          onclick: {
+            enable: true,
+            mode: "push",
+          },
+          resize: true,
+        },
+        modes: {
+          grab: {
+            distance: 140,
+            line_linked: {
+              opacity: 0.5,
+            },
+          },
+          push: {
+            particles_nb: 4,
+          },
+        },
+      },
+      retina_detect: true,
+    });
   });
 </script>

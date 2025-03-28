@@ -13,22 +13,25 @@ const interestIcons: Record<string, keyof typeof LucideIcons> = {
 
 <section id="interests" class="py-20">
   <div class="container mx-auto px-4">
-    <div class="text-center mb-12">
+    <div class="text-center mb-12 reveal-animation">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Interests & Hobbies</h2>
       <p class="text-gray-400 max-w-2xl mx-auto">
-        Beyond code, here’s what keeps me engaged.
+        Beyond code, here's what keeps me engaged.
       </p>
     </div>
 
     <div class="flex flex-wrap justify-center gap-4">
       {
-        interests.interests.map((interest) => {
+        interests.interests.map((interest, index) => {
           const iconName = interestIcons[interest.name] || "Heart";
           const Icon = LucideIcons[iconName as keyof typeof LucideIcons];
 
           return (
-            <div class="flex items-center gap-2 px-4 py-2 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:border-accent/50 transition-all">
-              <Icon class="w-5 h-5 text-accent" />
+            <div
+              class="flex items-center gap-2 px-4 py-2 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:border-accent/50 transition-all duration-300 hover:scale-105 interest-item"
+              data-index={index}
+            >
+              <Icon class="w-5 h-5 text-accent interest-icon" />
               <span class="text-gray-300">{interest.name}</span>
             </div>
           );
@@ -37,3 +40,91 @@ const interestIcons: Record<string, keyof typeof LucideIcons> = {
     </div>
   </div>
 </section>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes popIn {
+    0% {
+      transform: scale(0);
+    }
+    70% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .reveal-animation {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+  }
+
+  .interest-item {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .interest-icon {
+    opacity: 0;
+    transform: scale(0);
+  }
+</style>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Animate section title
+            const title = entry.target.querySelector(".reveal-animation");
+            if (title) {
+              (title as HTMLElement).style.opacity = "1";
+            }
+
+            // Animate interest items with staggered delay
+            const items = entry.target.querySelectorAll(".interest-item");
+            items.forEach((item, index) => {
+              setTimeout(() => {
+                (item as HTMLElement).style.opacity = "1";
+                (item as HTMLElement).style.transform = "translateY(0)";
+                (item as HTMLElement).style.transition =
+                  "opacity 0.3s ease, transform 0.3s ease, border-color 0.3s ease, scale 0.3s ease";
+
+                // Animate the icon with a pop effect
+                const icon = item.querySelector(".interest-icon");
+                if (icon) {
+                  setTimeout(() => {
+                    (icon as HTMLElement).style.animation =
+                      "popIn 0.5s forwards";
+                    (icon as HTMLElement).style.opacity = "1";
+                  }, 100);
+                }
+              }, 100 * index);
+            });
+
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    // Observe the interests section
+    const interestsSection = document.getElementById("interests");
+    if (interestsSection) {
+      observer.observe(interestsSection);
+    }
+  });
+</script>

@@ -22,7 +22,7 @@ const skillIcons: Record<string, keyof typeof LucideIcons> = {
 
 <section id="skills" class="py-20 bg-gray-900">
   <div class="container mx-auto px-4">
-    <div class="text-center mb-16">
+    <div class="text-center mb-16 reveal-animation">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Tools and Tech</h2>
       <p class="text-gray-400 max-w-2xl mx-auto">
         A collection of frameworks and libraries I've worked with throughout my
@@ -32,21 +32,27 @@ const skillIcons: Record<string, keyof typeof LucideIcons> = {
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       {
-        skills.categories.map((category) => (
-          <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:shadow-accent/10">
+        skills.categories.map((category, categoryIndex) => (
+          <div
+            class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:shadow-accent/10 skill-category"
+            data-index={categoryIndex}
+          >
             <h3 class="text-xl font-semibold mb-4 text-center">
               {category.name}
             </h3>
 
             <div class="grid grid-cols-2 gap-4">
-              {category.skills.map((skill) => {
+              {category.skills.map((skill, skillIndex) => {
                 const Icon =
                   LucideIcons[
                     skillIcons[skill.name] as keyof typeof LucideIcons
                   ] || LucideIcons.Code; // Fallback to "Code"
                 return (
-                  <div class="flex items-center gap-3 p-3 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                    <div class="w-10 h-10 rounded-md bg-accent/20 flex items-center justify-center text-accent">
+                  <div
+                    class="flex items-center gap-3 p-3 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-all duration-300 skill-item"
+                    data-index={skillIndex}
+                  >
+                    <div class="w-10 h-10 rounded-md bg-accent/20 flex items-center justify-center text-accent skill-icon">
                       <Icon class="w-5 h-5" />
                     </div>
                     <span>{skill.name}</span>
@@ -60,3 +66,114 @@ const skillIcons: Record<string, keyof typeof LucideIcons> = {
     </div>
   </div>
 </section>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes iconPop {
+    0% {
+      transform: scale(0);
+    }
+    70% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .reveal-animation {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+  }
+
+  .skill-category {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .skill-item {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .skill-icon {
+    transform: scale(0);
+  }
+</style>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Animate section title
+            const title = entry.target.querySelector(".reveal-animation");
+            if (title) {
+              (title as HTMLElement).style.opacity = "1";
+            }
+
+            // Animate skill categories with staggered delay
+            const categories = entry.target.querySelectorAll(".skill-category");
+            categories.forEach((category, index) => {
+              setTimeout(() => {
+                (category as HTMLElement).style.opacity = "1";
+                (category as HTMLElement).style.transform = "translateY(0)";
+                (category as HTMLElement).style.transition =
+                  "opacity 0.5s ease, transform 0.5s ease";
+
+                // Animate skill items within this category
+                const items = category.querySelectorAll(".skill-item");
+                items.forEach((item, itemIndex) => {
+                  setTimeout(() => {
+                    (item as HTMLElement).style.opacity = "1";
+                    (item as HTMLElement).style.transform = "translateY(0)";
+                    (item as HTMLElement).style.transition =
+                      "opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease";
+
+                    // Animate the icon with a pop effect
+                    const icon = item.querySelector(".skill-icon");
+                    if (icon) {
+                      (icon as HTMLElement).style.animation =
+                        "iconPop 0.5s forwards";
+                    }
+                  }, 100 * itemIndex);
+                });
+              }, 200 * index);
+            });
+
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    // Observe the skills section
+    const skillsSection = document.getElementById("skills");
+    if (skillsSection) {
+      observer.observe(skillsSection);
+    }
+  });
+</script>
