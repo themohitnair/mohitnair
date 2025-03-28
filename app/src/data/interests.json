@@ -1,25 +1,9 @@
 {
   "interests": [
-    {
-      "name": "Chess",
-      "description": "My favourite game"
-    },
-    {
-      "name": "Open Source",
-      "description": "FOSS Forever!"
-    },
-    {
-      "name": "Food",
-      "description": "What's life without Burgers and Croissants?"
-    },
-    {
-      "name": "Movies",
-      "description": "TDK is the OG!"
-    },
-    {
-      "name": "Writing",
-      "description": "Expressing my thoughts on stuff around me."
-    }
+    { "name": "Chess", "icon": "BrainCircuit" },
+    { "name": "Open Source", "icon": "Code2" },
+    { "name": "Food", "icon": "Pizza" },
+    { "name": "Movies", "icon": "Film" },
+    { "name": "Writing", "icon": "Pen" }
   ]
 }
-

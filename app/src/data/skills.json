@@ -1,33 +1,38 @@
 {
   "categories": [
     {
-      "name": "Frontend",
+      "name": "Full Stack",
       "skills": [
-        { "name": "HTML", "icon": "html" },
-        { "name": "CSS", "icon": "css" },
-        { "name": "JavaScript", "icon": "javascript" },
-        { "name": "React", "icon": "react" },
-        { "name": "Tailwind CSS", "icon": "tailwind" }
+        { "name": "HTML", "icon": "FileCode2" },
+        { "name": "CSS", "icon": "PaintBucket" },
+        { "name": "TypeScript", "icon": "Code" },
+        { "name": "React", "icon": "Atom" },
+        { "name": "Tailwind CSS", "icon": "Wind" },
+        { "name": "Node.js", "icon": "Server" },
+        { "name": "Python", "icon": "Terminal" }
+
       ]
     },
     {
-      "name": "Backend",
+      "name": "AI & ML",
       "skills": [
-        { "name": "Node.js", "icon": "nodejs" },
-        { "name": "Express", "icon": "express" },
-        { "name": "Python", "icon": "python" },
-        { "name": "Django", "icon": "django" }
+        { "name": "Langchain", "icon": "Link" },
+        { "name": "RAG", "icon": "Book" },
+        { "name": "LLMs", "icon": "Brain" },
+        { "name": "Agentic Systems", "icon": "Bot" },
+        { "name": "Machine Learning", "icon": "BarChartBig" }
       ]
     },
     {
       "name": "Tools & Others",
       "skills": [
-        { "name": "Git", "icon": "git" },
-        { "name": "Docker", "icon": "docker" },
-        { "name": "AWS", "icon": "aws" },
-        { "name": "VS Code", "icon": "vscode" }
+        { "name": "Git", "icon": "GitBranch" },
+        { "name": "Docker", "icon": "Ship" },
+        { "name": "AWS", "icon": "Cloud" },
+        { "name": "VS Code", "icon": "Code2" },
+        { "name": "Linux", "icon": "Terminal" },
+        { "name": "Google Cloud Run", "icon": "Cloud" }
       ]
     }
   ]
 }
-

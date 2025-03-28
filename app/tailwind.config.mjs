@@ -1,20 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}", "*.{js,ts,jsx,tsx,mdx}"],
-  darkMode: 'class',
+  darkMode: 'class', // Keep this if you ever want to toggle dark mode
   theme: {
     extend: {
       colors: {
         primary: '#3B82F6',
         secondary: '#10B981',
-        background: {
-          dark: '#121212',
-          light: '#F9FAFB',
-        },
-        text: {
-          dark: '#F3F4F6',
-          light: '#1F2937',
-        },
+        background: '#000000',
+        text: '#F3F4F6',
         accent: '#8B5CF6',
       },
       fontFamily: {

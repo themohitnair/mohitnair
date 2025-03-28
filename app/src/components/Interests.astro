@@ -1,33 +1,38 @@
 ---
-import { Heart } from "lucide-astro";
+import * as LucideIcons from "lucide-astro";
 import interests from "../data/interests.json";
+
+const interestIcons: Record<string, keyof typeof LucideIcons> = {
+  Chess: "BrainCircuit",
+  "Open Source": "Code2",
+  Food: "Pizza",
+  Movies: "Film",
+  Writing: "Pen",
+};
 ---
 
 <section id="interests" class="py-20">
   <div class="container mx-auto px-4">
-    <div class="text-center mb-16">
+    <div class="text-center mb-12">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Interests & Hobbies</h2>
       <p class="text-gray-400 max-w-2xl mx-auto">
-        When I'm not creating, here's what keeps me busy and inspired.
+        Beyond code, here’s what keeps me engaged.
       </p>
     </div>
 
-    <div
-      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"
-    >
+    <div class="flex flex-wrap justify-center gap-4">
       {
-        interests.interests.map((interest) => (
-          <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:shadow-accent/10 flex flex-col items-center text-center group">
-            <div class="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mb-4 group-hover:bg-accent/30 transition-colors">
-              <Heart class="w-8 h-8 text-accent" />
-            </div>
+        interests.interests.map((interest) => {
+          const iconName = interestIcons[interest.name] || "Heart";
+          const Icon = LucideIcons[iconName as keyof typeof LucideIcons];
 
-            <h3 class="text-lg font-semibold mb-2 group-hover:text-accent transition-colors">
-              {interest.name}
-            </h3>
-            <p class="text-gray-400 text-sm">{interest.description}</p>
-          </div>
-        ))
+          return (
+            <div class="flex items-center gap-2 px-4 py-2 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:border-accent/50 transition-all">
+              <Icon class="w-5 h-5 text-accent" />
+              <span class="text-gray-300">{interest.name}</span>
+            </div>
+          );
+        })
       }
     </div>
   </div>

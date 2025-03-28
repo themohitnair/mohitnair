@@ -1,6 +1,23 @@
 ---
-import { Code } from "lucide-astro";
+import * as LucideIcons from "lucide-astro";
 import skills from "../data/skills.json";
+
+// Define type-safe icon mapping
+const skillIcons: Record<string, keyof typeof LucideIcons> = {
+  HTML: "FileCode2",
+  CSS: "PaintBucket",
+  JavaScript: "Code",
+  React: "Atom",
+  "Tailwind CSS": "Wind",
+  "Node.js": "Server",
+  Express: "Package",
+  Python: "Terminal",
+  Django: "Database",
+  Git: "GitBranch",
+  Docker: "Ship",
+  AWS: "Cloud",
+  "VS Code": "Code2",
+};
 ---
 
 <section id="skills" class="py-20 bg-gray-900">
@@ -22,14 +39,20 @@ import skills from "../data/skills.json";
             </h3>
 
             <div class="grid grid-cols-2 gap-4">
-              {category.skills.map((skill) => (
-                <div class="flex items-center gap-3 p-3 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <div class="w-10 h-10 rounded-md bg-accent/20 flex items-center justify-center text-accent">
-                    <Code class="w-5 h-5" />
+              {category.skills.map((skill) => {
+                const Icon =
+                  LucideIcons[
+                    skillIcons[skill.name] as keyof typeof LucideIcons
+                  ] || LucideIcons.Code; // Fallback to "Code"
+                return (
+                  <div class="flex items-center gap-3 p-3 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
+                    <div class="w-10 h-10 rounded-md bg-accent/20 flex items-center justify-center text-accent">
+                      <Icon class="w-5 h-5" />
+                    </div>
+                    <span>{skill.name}</span>
                   </div>
-                  <span>{skill.name}</span>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         ))
