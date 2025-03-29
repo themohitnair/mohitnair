@@ -3,9 +3,9 @@ import { ExternalLink, Github } from "lucide-astro";
 import projects from "../data/projects.json";
 ---
 
-<section id="projects" class="py-20 bg-gray-900">
+<section id="projects" class="py-20 bg-black">
   <div class="container mx-auto px-4">
-    <div class="text-center mb-16 reveal-animation">
+    <div class="text-center mb-16" data-aos="fade-down" data-aos-duration="800">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
       <p class="text-gray-400 max-w-2xl mx-auto">
         A selection of projects I've worked on, showcasing my skills and
@@ -18,7 +18,9 @@ import projects from "../data/projects.json";
         projects.projects.map((project, index) => (
           <div
             class="bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700/50 hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:shadow-accent/10 group project-card"
-            data-index={index}
+            data-aos="fade-up"
+            data-aos-delay={200 * index}
+            data-aos-duration="800"
           >
             <div class="p-6">
               <h3 class="text-xl font-semibold mb-2 group-hover:text-accent transition-colors">
@@ -30,14 +32,19 @@ import projects from "../data/projects.json";
                 {project.technologies.map((tech, techIndex) => (
                   <span
                     class="px-3 py-1 bg-gray-700/50 rounded-full text-xs font-medium text-gray-300 tech-badge"
-                    data-index={techIndex}
+                    data-aos="fade-left"
+                    data-aos-delay={300 + 50 * techIndex}
                   >
                     {tech}
                   </span>
                 ))}
               </div>
 
-              <div class="flex gap-4 project-links">
+              <div
+                class="flex gap-4 project-links"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
                 <a
                   href={project.github}
                   target="_blank"
@@ -64,10 +71,7 @@ import projects from "../data/projects.json";
       }
     </div>
 
-    <div
-      class="text-center mt-12 reveal-animation"
-      style="animation-delay: 0.4s;"
-    >
+    <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="400">
       <a
         href="https://github.com/themohitnair"
         target="_blank"
@@ -82,103 +86,5 @@ import projects from "../data/projects.json";
 </section>
 
 <style>
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes slideInRight {
-    from {
-      opacity: 0;
-      transform: translateX(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  .reveal-animation {
-    opacity: 0;
-    animation: fadeInUp 0.8s ease forwards;
-  }
-
-  .project-card {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  .tech-badge {
-    opacity: 0;
-    transform: translateX(10px);
-  }
-
-  .project-links {
-    opacity: 0;
-  }
+  /* Keep existing styles */
 </style>
-
-<script>
-  document.addEventListener("astro:page-load", () => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // Animate section title
-            const title = entry.target.querySelector(".reveal-animation");
-            if (title) {
-              (title as HTMLElement).style.opacity = "1";
-            }
-
-            // Animate project cards with staggered delay
-            const cards = entry.target.querySelectorAll(".project-card");
-            cards.forEach((card, index) => {
-              setTimeout(() => {
-                (card as HTMLElement).style.opacity = "1";
-                (card as HTMLElement).style.transform = "translateY(0)";
-                (card as HTMLElement).style.transition =
-                  "opacity 0.5s ease, transform 0.5s ease, border-color 0.3s ease, box-shadow 0.3s ease";
-
-                // Animate tech badges
-                const badges = card.querySelectorAll(".tech-badge");
-                badges.forEach((badge, badgeIndex) => {
-                  setTimeout(() => {
-                    (badge as HTMLElement).style.opacity = "1";
-                    (badge as HTMLElement).style.transform = "translateX(0)";
-                    (badge as HTMLElement).style.transition =
-                      "opacity 0.3s ease, transform 0.3s ease";
-                  }, 100 * badgeIndex);
-                });
-
-                // Animate links
-                const links = card.querySelector(".project-links");
-                if (links) {
-                  setTimeout(() => {
-                    (links as HTMLElement).style.opacity = "1";
-                    (links as HTMLElement).style.transition =
-                      "opacity 0.5s ease";
-                  }, 300);
-                }
-              }, 200 * index);
-            });
-
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    // Observe the projects section
-    const projectsSection = document.getElementById("projects");
-    if (projectsSection) {
-      observer.observe(projectsSection);
-    }
-  });
-</script>

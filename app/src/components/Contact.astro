@@ -3,9 +3,9 @@ import { Gamepad, Github, Linkedin, Mail, Send, Twitter } from "lucide-astro";
 import profile from "../data/profile.json";
 ---
 
-<section id="contact" class="py-20 bg-gray-900">
+<section id="contact" class="py-20 bg-black">
   <div class="container mx-auto px-4">
-    <div class="text-center mb-16">
+    <div class="text-center mb-16" data-aos="fade-down" data-aos-duration="800">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
       <p class="text-gray-400 max-w-2xl mx-auto">
         Feel free to reach out for collaborations, opportunities, or just to say
@@ -15,14 +15,19 @@ import profile from "../data/profile.json";
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
       <div
-        class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50"
+        class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50 hover:transform hover:scale-[1.02] transition-transform"
+        data-aos="fade-right"
+        data-aos-duration="1000"
+        data-aos-delay="200"
       >
         <h3 class="text-xl font-semibold mb-6">Connect With Me</h3>
 
         <div class="space-y-6">
           <a
             href={`mailto:${profile.social.email}`}
-            class="flex items-center gap-4 text-gray-300 hover:text-accent transition-colors"
+            class="flex items-center gap-4 text-gray-300 hover:text-accent transition-all hover:translate-x-2"
+            data-aos="fade-up"
+            data-aos-delay="400"
           >
             <div
               class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center text-accent"
@@ -39,7 +44,9 @@ import profile from "../data/profile.json";
             href={profile.social.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            class="flex items-center gap-4 text-gray-300 hover:text-accent transition-colors"
+            class="flex items-center gap-4 text-gray-300 hover:text-accent transition-all hover:translate-x-2"
+            data-aos="fade-up"
+            data-aos-delay="500"
           >
             <div
               class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center text-accent"
@@ -56,7 +63,9 @@ import profile from "../data/profile.json";
             href={profile.social.github}
             target="_blank"
             rel="noopener noreferrer"
-            class="flex items-center gap-4 text-gray-300 hover:text-accent transition-colors"
+            class="flex items-center gap-4 text-gray-300 hover:text-accent transition-all hover:translate-x-2"
+            data-aos="fade-up"
+            data-aos-delay="600"
           >
             <div
               class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center text-accent"
@@ -73,7 +82,9 @@ import profile from "../data/profile.json";
             href={profile.social.twitter}
             target="_blank"
             rel="noopener noreferrer"
-            class="flex items-center gap-4 text-gray-300 hover:text-accent transition-colors"
+            class="flex items-center gap-4 text-gray-300 hover:text-accent transition-all hover:translate-x-2"
+            data-aos="fade-up"
+            data-aos-delay="700"
           >
             <div
               class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center text-accent"
@@ -90,7 +101,9 @@ import profile from "../data/profile.json";
             href={profile.social.chess}
             target="_blank"
             rel="noopener noreferrer"
-            class="flex items-center gap-4 text-gray-300 hover:text-accent transition-colors"
+            class="flex items-center gap-4 text-gray-300 hover:text-accent transition-all hover:translate-x-2"
+            data-aos="fade-up"
+            data-aos-delay="800"
           >
             <div
               class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center text-accent"
@@ -106,7 +119,10 @@ import profile from "../data/profile.json";
       </div>
 
       <div
-        class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50"
+        class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50 hover:transform hover:scale-[1.02] transition-transform"
+        data-aos="fade-left"
+        data-aos-duration="1000"
+        data-aos-delay="200"
       >
         <h3 class="text-xl font-semibold mb-6">Send Me a Message</h3>
 
@@ -116,7 +132,7 @@ import profile from "../data/profile.json";
           method="POST"
           class="space-y-4"
         >
-          <div>
+          <div data-aos="fade-up" data-aos-delay="600">
             <label
               for="name"
               class="block text-sm font-medium text-gray-400 mb-1">Name</label
@@ -126,11 +142,11 @@ import profile from "../data/profile.json";
               id="name"
               name="name"
               required
-              class="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-accent/50 text-white"
+              class="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-accent/50 text-white transition-all focus:scale-[1.02]"
             />
           </div>
 
-          <div>
+          <div data-aos="fade-up" data-aos-delay="700">
             <label
               for="email"
               class="block text-sm font-medium text-gray-400 mb-1">Email</label
@@ -140,11 +156,11 @@ import profile from "../data/profile.json";
               id="email"
               name="email"
               required
-              class="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-accent/50 text-white"
+              class="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-accent/50 text-white transition-all focus:scale-[1.02]"
             />
           </div>
 
-          <div>
+          <div data-aos="fade-up" data-aos-delay="800">
             <label
               for="message"
               class="block text-sm font-medium text-gray-400 mb-1"
@@ -155,13 +171,15 @@ import profile from "../data/profile.json";
               name="message"
               rows="4"
               required
-              class="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-accent/50 text-white resize-none"
+              class="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-accent/50 text-white resize-none transition-all focus:scale-[1.02]"
             ></textarea>
           </div>
 
           <button
             type="submit"
-            class="w-full px-6 py-3 bg-accent hover:bg-accent/80 text-white rounded-md font-medium transition-colors flex items-center justify-center gap-2"
+            class="w-full px-6 py-3 bg-accent hover:bg-accent/80 text-white rounded-md font-medium transition-all hover:scale-[1.02] flex items-center justify-center gap-2"
+            data-aos="fade-up"
+            data-aos-delay="900"
           >
             <Send class="w-5 h-5" />
             Send Message
@@ -187,7 +205,16 @@ import profile from "../data/profile.json";
 </section>
 
 <script>
+  import AOS from "aos";
+  import "aos/dist/aos.css";
+
   document.addEventListener("astro:page-load", () => {
+    AOS.init({
+      once: true,
+      offset: 50,
+      duration: 800,
+    });
+
     const contactForm = document.getElementById(
       "contact-form"
     ) as HTMLFormElement | null;
@@ -229,3 +256,5 @@ import profile from "../data/profile.json";
     });
   });
 </script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />

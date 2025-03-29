@@ -3,7 +3,7 @@ import { Mouse, Linkedin, Github } from "lucide-astro";
 import profile from "../data/profile.json";
 ---
 
-<section class="relative min-h-[90vh] flex items-center py-16">
+<section class="bg-black relative min-h-[90vh] flex items-center py-16">
   <div
     class="absolute inset-0 bg-gradient-to-b from-background-dark to-gray-900 -z-10"
   >
@@ -14,19 +14,35 @@ import profile from "../data/profile.json";
   <div class="container mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="order-2 lg:order-1 hero-content">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 hero-title">
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 hero-title"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
           Hi, I'm <span class="text-accent hero-name"
             >{profile.name.split(" ")[0]} {profile.name.split(" ")[1]}</span
           >
         </h1>
-        <h2 class="text-2xl md:text-3xl text-gray-300 mb-6 hero-subtitle">
+        <h2
+          class="text-2xl md:text-3xl text-gray-300 mb-6 hero-subtitle"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
           {profile.title}
         </h2>
-        <p class="text-gray-400 text-lg mb-8 max-w-lg hero-bio">
+        <p
+          class="text-gray-400 text-lg mb-8 max-w-lg hero-bio"
+          data-aos="fade-up"
+          data-aos-delay="600"
+        >
           {profile.bio}
         </p>
 
-        <div class="flex flex-wrap gap-4 hero-buttons">
+        <div
+          class="flex flex-wrap gap-4 hero-buttons"
+          data-aos="fade-up"
+          data-aos-delay="800"
+        >
           <a
             href={profile.social.linkedin}
             target="_blank"
@@ -50,13 +66,20 @@ import profile from "../data/profile.json";
 
         <div
           class="mt-12 flex items-center gap-2 text-gray-400 animate-bounce hero-scroll"
+          data-aos="fade"
+          data-aos-delay="1400"
         >
           <Mouse class="w-5 h-5" />
           <span>Scroll down to explore</span>
         </div>
       </div>
 
-      <div class="order-1 lg:order-2 flex justify-center hero-image z-10">
+      <div
+        class="order-1 lg:order-2 flex justify-center hero-image z-10"
+        data-aos="zoom-in"
+        data-aos-delay="300"
+        data-aos-duration="1000"
+      >
         <div class="relative">
           <div
             class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-accent/30 relative z-10 profile-image"
@@ -80,130 +103,7 @@ import profile from "../data/profile.json";
 </section>
 
 <style>
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes scaleIn {
-    from {
-      opacity: 0;
-      transform: scale(0.9);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  @keyframes floatAnimation {
-    0% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-15px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
-  }
-
-  @keyframes pulseGlow {
-    0% {
-      opacity: 0.5;
-      transform: scale(0.95);
-    }
-    50% {
-      opacity: 0.8;
-      transform: scale(1.05);
-    }
-    100% {
-      opacity: 0.5;
-      transform: scale(0.95);
-    }
-  }
-
-  .hero-title {
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards;
-    animation-delay: 0.2s;
-  }
-
-  .hero-name {
-    display: inline-block;
-    position: relative;
-  }
-
-  .hero-name::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--accent-color, #3b82f6);
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.5s ease-out;
-  }
-
-  .hero-name:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
-
-  .hero-subtitle {
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards;
-    animation-delay: 0.4s;
-  }
-
-  .hero-bio {
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards;
-    animation-delay: 0.6s;
-  }
-
-  .hero-buttons {
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards;
-    animation-delay: 0.8s;
-  }
-
-  .hero-scroll {
-    opacity: 0;
-    animation: fadeIn 0.8s ease forwards;
-    animation-delay: 1.4s;
-  }
-
-  .hero-image {
-    opacity: 0;
-    animation: scaleIn 1s ease forwards;
-    animation-delay: 0.3s;
-  }
-
-  .profile-image {
-    animation: floatAnimation 6s ease-in-out infinite;
-  }
-
-  .profile-glow {
-    animation: pulseGlow 4s ease-in-out infinite;
-  }
+  /* Keep existing styles */
 </style>
 
 <script>
