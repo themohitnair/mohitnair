@@ -3,31 +3,52 @@
     {
       "title": "densAIr",
       "description": "A free, AI-powered technical-reading assistant",
-      "technologies": ["NextJS", "FastAPI", "LlamaParse", "Exa", "AWS Polly", "Google Cloud Run", "Gemini", "Upstash", "Chonkie"],
+      "technologies": [
+        "NextJS",
+        "FastAPI",
+        "Exa",
+        "AWS Polly",
+        "Google Cloud Run",
+        "Gemini",
+        "Upstash",
+        "Chonkie"
+      ],
       "github": "https://github.com/mohitnair/ecommerce-platform",
       "demo": "https://densair.vercel.app"
     },
     {
       "title": "smarn",
       "description": "A local, open-source, Linux version of Windows Recall",
-      "technologies": ["FastAPI", "Vector SQLite"],
+      "technologies": [
+        "FastAPI",
+        "Vector SQLite"
+      ],
       "github": "https://github.com/mohitnair/weather-app",
       "demo": "https://github.com/SuchitG04/smarn/blob/main/README.md"
     },
     {
       "title": "RIT TitleCraft",
       "description": "A free service that generates academic titlepages without hassle involved.",
-      "technologies": ["NextJS", "python-docx", "FastAPI", "AWS EC2", "nginx"],
+      "technologies": [
+        "NextJS",
+        "python-docx",
+        "FastAPI",
+        "AWS EC2",
+        "nginx"
+      ],
       "github": "https://github.com/themohitnair/rit-titlepage",
       "demo": "https://rit-titlepage.vercel.app"
     },
     {
       "title": "sfnx",
       "description": "A secure, open-source, command-line password manager.",
-      "technologies": ["AES Encryption", "Typer", "SQLite"],
+      "technologies": [
+        "AES Encryption",
+        "Typer",
+        "SQLite"
+      ],
       "github": "https://github.com/themohitnair/sfnx",
       "demo": "https://aur.archlinux.org/packages/sfnx"
     }
   ]
 }
-
