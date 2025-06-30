@@ -10,7 +10,6 @@
         { "name": "Tailwind CSS", "icon": "Wind" },
         { "name": "Node.js", "icon": "Server" },
         { "name": "Python", "icon": "Terminal" }
-
       ]
     },
     {
@@ -31,7 +30,8 @@
         { "name": "AWS", "icon": "Cloud" },
         { "name": "VS Code", "icon": "Code2" },
         { "name": "Linux", "icon": "Terminal" },
-        { "name": "Google Cloud Run", "icon": "Cloud" }
+        { "name": "Google Cloud Run", "icon": "Cloud" },
+        { "name": "Qdrant", "icon": "Database" }
       ]
     }
   ]

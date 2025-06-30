@@ -7,6 +7,7 @@ import Projects from "../components/Projects.astro";
 import Interests from "../components/Interests.astro";
 import Contact from "../components/Contact.astro";
 import profile from "../data/profile.json";
+import Experience from "../components/Experience.astro";
 ---
 
 <Layout title={`${profile.name} | Portfolio`}>
@@ -30,6 +31,8 @@ import profile from "../data/profile.json";
       </div>
     </div>
   </section>
+
+  <Experience />
 
   <Skills />
   <Education />

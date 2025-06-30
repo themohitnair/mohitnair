@@ -17,14 +17,14 @@
       "demo": "https://densair.vercel.app"
     },
     {
-      "title": "smarn",
-      "description": "A local, open-source, Linux version of Windows Recall",
+      "title": "stare",
+      "description": "A local, open-source, local Activity Recall Engine",
       "technologies": [
         "FastAPI",
         "Vector SQLite"
       ],
-      "github": "https://github.com/mohitnair/weather-app",
-      "demo": "https://github.com/SuchitG04/smarn/blob/main/README.md"
+      "github": "https://github.com/themohitnair/stare",
+      "demo": "https://github.com/themohitnair/stare/blob/main/README.md"
     },
     {
       "title": "RIT TitleCraft",
@@ -33,7 +33,7 @@
         "NextJS",
         "python-docx",
         "FastAPI",
-        "AWS EC2",
+        "Google Cloud Run",
         "nginx"
       ],
       "github": "https://github.com/themohitnair/rit-titlepage",
